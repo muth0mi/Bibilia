@@ -22,7 +22,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ryanada.bibiliatakatifu.verses.Main2Activity"
+            android:name="com.ryanada.bibiliatakatifu.versesContent.Main2Activity"
             android:parentActivityName="com.ryanada.bibiliatakatifu.books.MainActivity" />
         <activity android:name="com.ryanada.bibiliatakatifu.books.MainActivity" >
             <intent-filter>
@@ -31,6 +31,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.ryanada.bibiliatakatifu.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

@@ -64,7 +64,7 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.verse == variableId) {
-            setVerse((com.ryanada.bibiliatakatifu.objects.Verse) variable);
+            setVerse((com.ryanada.bibiliatakatifu.objects.VerseContent) variable);
         }
         else {
             variableSet = false;
@@ -72,7 +72,7 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
             return variableSet;
     }
 
-    public void setVerse(@Nullable com.ryanada.bibiliatakatifu.objects.Verse Verse) {
+    public void setVerse(@Nullable com.ryanada.bibiliatakatifu.objects.VerseContent Verse) {
         this.mVerse = Verse;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -95,7 +95,7 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.ryanada.bibiliatakatifu.objects.Verse verse = mVerse;
+        com.ryanada.bibiliatakatifu.objects.VerseContent verse = mVerse;
         java.lang.String verseNumber = null;
         java.lang.String verseText = null;
         java.lang.String javaLangStringTVerseText = null;

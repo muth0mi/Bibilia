@@ -12,10 +12,6 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_navigate_next_24px.xml"
     },
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_activity_main2.xml.flat",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main2.xml"
-    },
-    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png"
     },
@@ -24,12 +20,16 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_baseline_navigate_before_24px.png"
     },
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_row_verse.xml.flat",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_verse.xml"
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_activity_main2.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main2.xml"
     },
     {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_row_verse.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_verse.xml"
     },
     {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -40,12 +40,12 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_navigate_next_24px.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_navigate_next_24px.png"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_baseline_navigate_next_24px.png.flat",
@@ -80,12 +80,12 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_navigate_next_24px.png"
     },
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable_background_chapter_number.xml.flat",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/drawable/background_chapter_number.xml"
-    },
-    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_navigate_before_24px.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_navigate_before_24px.png"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable_background_chapter_number.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/drawable/background_chapter_number.xml"
     },
     {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_navigate_before_24px.png.flat",
@@ -148,11 +148,11 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_book.xml"
     },
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main.xml"
-    },
-    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_navigate_before_24px.xml.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_navigate_before_24px.xml"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main.xml"
     }
 ]

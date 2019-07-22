@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.ryanada.bibiliatakatifu.verses.Main2Activity"
+            android:name="com.ryanada.bibiliatakatifu.versesContent.Main2Activity"
             android:parentActivityName=".books.MainActivity"></activity>
 
         <activity android:name=".books.MainActivity">

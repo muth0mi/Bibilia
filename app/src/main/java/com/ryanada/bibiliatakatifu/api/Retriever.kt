@@ -1,26 +1,23 @@
 package com.ryanada.bibiliatakatifu.api
 
-import android.app.Activity
 import android.util.Log
 import android.widget.Toast
-import com.android.volley.Request
-import com.android.volley.Response
+import androidx.lifecycle.ViewModelProviders
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.androidnetworking.AndroidNetworking
-import com.androidnetworking.common.Priority
-import com.androidnetworking.error.ANError
-import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.ryanada.bibiliatakatifu.books.MainActivity
 import com.ryanada.bibiliatakatifu.objects.Book
-import org.json.JSONArray
+import com.ryanada.bibiliatakatifu.objects.Chapter
+import com.ryanada.bibiliatakatifu.objects.Verse
+import com.ryanada.bibiliatakatifu.objects.VerseContent
 
 
-class Retriever(val context: Activity) {
+class Retriever(val context: MainActivity) {
     // Common Parameters
-    val apiKey = "0861884250cf70cf44e0364a57b650f9"
+//    val apiKey = "0861884250cf70cf44e0364a57b650f9"
+    val apiKey = "14ffdc4cd88203ca1a99b3fdcfad9c83"
     val contentType = "json"
 
     // Endpoints
@@ -34,9 +31,27 @@ class Retriever(val context: Activity) {
             { response ->
                 Log.e("fetchingBooks", "success")
                 try {
-                    context.runOnUiThread { Toast.makeText(context, "Done $response", Toast.LENGTH_SHORT).show() }
+                    // Convert JSON to list
+                    val type = object : TypeToken<ArrayList<Book>>() {}.type
+                    val books = Gson().fromJson<ArrayList<Book>>(response.getJSONArray("data").toString(), type)
 
-                } catch (_: Exception) {
+                    // Database instance
+                    val viewModel: com.ryanada.bibiliatakatifu.books.ViewModel = ViewModelProviders.of(context).get(com.ryanada.bibiliatakatifu.books.ViewModel::class.java)
+
+                    // Remove Older from db
+//                    viewModel.deleteAllBooks()
+
+                    // Save in db
+                    viewModel.saveAllBooks(books)
+
+                    // Get and save chapters
+                    for (book in books)
+                        Thread(Runnable {
+                            getChapters("/${book.id}")
+                        }).start()
+
+                } catch (e: Exception) {
+                    Log.e("fetchingBooks", "failed $e")
                 }
             },
             { error ->
@@ -45,13 +60,13 @@ class Retriever(val context: Activity) {
         ) { // Passing request headers
             override fun getHeaders(): Map<String, String> {
                 val headers = HashMap<String, String>()
-                headers["api-key"] = "0861884250cf70cf44e0364a57b650f9"
+                headers["api-key"] = apiKey
                 return headers
             }
 
             override fun getParams(): Map<String, String> {
                 val params = HashMap<String, String>()
-//                params["content-type"] = contentType
+                params["content-type"] = contentType
                 return params
             }
         }
@@ -60,64 +75,173 @@ class Retriever(val context: Activity) {
         Volley.newRequestQueue(context).add(stringRequest)
     }
 
-    fun getBooks_(): ArrayList<Book> {
-        AndroidNetworking.initialize(context.applicationContext);
+    // To retrieve all chapters from API
+    fun getChapters(bookId: String) {
+        // Request a string response from the provided URL.
+        val stringRequest = object : JsonObjectRequest(Method.GET, "$baseUrl$version/books$bookId/chapters", null,
+            { response ->
+                Log.e("fetchingChapters", "success")
+                try {
+                    // Convert JSON to list
+                    val type = object : TypeToken<ArrayList<Chapter>>() {}.type
+                    val chapters = Gson().fromJson<ArrayList<Chapter>>(response.getJSONArray("data").toString(), type)
 
-        AndroidNetworking.get("$baseUrl$version/books")
-            .addHeaders("api-key", apiKey)
-//            .setcon
-//            .addQueryParameter("content-type", contentType)
-            .setPriority(Priority.HIGH)
-            .build()
-            .getAsJSONArray(object : JSONArrayRequestListener {
-                override fun onResponse(response: JSONArray) {
-                    Log.e("fetchingBooks", "Success")
+                    // Database instance
+                    val viewModel: com.ryanada.bibiliatakatifu.chapters.ViewModel = ViewModelProviders.of(context).get(com.ryanada.bibiliatakatifu.chapters.ViewModel::class.java)
 
-                    val type = object : TypeToken<ArrayList<Book>>() {}.type
-                    val books = Gson().fromJson<ArrayList<Book>>(response.toString(), type)
+                    // Remove Older from db
+//                    viewModel.deleteAllChapters()
 
-                    context.runOnUiThread {
-                        Toast.makeText(context, books[1].name, Toast.LENGTH_SHORT).show()
-                    }
+                    // Save in db
+                    viewModel.saveAllChapters(chapters)
 
-                }
+                    // Get and save verses
+                    for (chapter in chapters)
+                        Thread(Runnable {
+                            getVerses("/${chapter.id}")
+                        }).start()
 
-                override fun onError(error: ANError) {
-                    Log.e("fetchingBooks", "failed " + error.errorBody)
 
-                    // handle error
-                }
-            })
-
-        return ArrayList()
-    }
-
-    fun volley() {
-        // Instantiate the RequestQueue.
-        val queue = Volley.newRequestQueue(context)
-        val url = "http://www.google.com"
-
-// Request a string response from the provided URL.
-        val stringRequest = StringRequest(
-            Request.Method.GET, url,
-            Response.Listener<String> { response ->
-                // Display the first 500 characters of the response string.
-                context.runOnUiThread {
-                    Toast.makeText(
-                        context,
-                        "Response is: ${response.substring(0, 500)}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                } catch (e: Exception) {
+                    Log.e("fetchingChapters", "failed $e")
                 }
             },
-            Response.ErrorListener {
-                context.runOnUiThread {
-                    Toast.makeText(context, "That didn't work!", Toast.LENGTH_SHORT).show()
-                }
-            })
+            { error ->
+                Log.e("fetchingChapters", "failed $error")
+            }
+        ) { // Passing request headers
+            override fun getHeaders(): Map<String, String> {
+                val headers = HashMap<String, String>()
+                headers["api-key"] = apiKey
+                return headers
+            }
 
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest)
+            override fun getParams(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params["content-type"] = contentType
+                return params
+            }
+        }
+
+        // Instantiate the RequestQueue.
+        Volley.newRequestQueue(context).add(stringRequest)
+    }
+
+
+    // To retrieve all verses from API
+    fun getVerses(chapterId: String) {
+        // Request a string response from the provided URL.
+        val stringRequest = object : JsonObjectRequest(Method.GET, "$baseUrl$version/chapters$chapterId/verses", null,
+            { response ->
+                Log.e("fetchingVerses", "success")
+                try {
+                    // Convert JSON to list
+                    val type = object : TypeToken<ArrayList<Verse>>() {}.type
+                    val verses = Gson().fromJson<ArrayList<Verse>>(response.getJSONArray("data").toString(), type)
+
+                    //
+
+                    // Database instance
+                    val viewModel: com.ryanada.bibiliatakatifu.verses.ViewModel = ViewModelProviders.of(context).get(com.ryanada.bibiliatakatifu.verses.ViewModel::class.java)
+
+                    // Remove Older from db
+//                    viewModel.deleteAllBooks()
+
+                    // Save in db
+                    viewModel.saveAllVerses(verses)
+
+                    // Get and save verses Contents
+                    for (verse in verses)
+                        Thread(Runnable {
+                            getVerseContents("/${verse.id}")
+                        }).start()
+
+                } catch (e: Exception) {
+                    Log.e("fetchingVerses", "failed $e")
+
+                }
+            },
+            { error ->
+                Log.e("fetchingVerses", "failed $error")
+            }
+        ) { // Passing request headers
+            override fun getHeaders(): Map<String, String> {
+                val headers = HashMap<String, String>()
+                headers["api-key"] = apiKey
+                return headers
+            }
+
+            override fun getParams(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params["content-type"] = contentType
+                return params
+            }
+        }
+
+        // Instantiate the RequestQueue.
+        Volley.newRequestQueue(context).add(stringRequest)
+    }
+
+
+    // To retrieve all verses from API
+    fun getVerseContents(verseId: String) {
+        // Request a string response from the provided URL.
+        val stringRequest = object : JsonObjectRequest(Method.GET, "$baseUrl$version/verses$verseId?content-type=json", null,
+            { response ->
+                Log.e("fetchingVersesContents", "success")
+                try {
+                    // Convert JSON to list
+                    val type = object : TypeToken<ArrayList<VerseContent>>() {}.type
+                    val jsonVerseContent = response.getJSONObject("data")
+
+                    val verseContent = VerseContent()
+                    verseContent.id = jsonVerseContent.getString("id")
+                    verseContent.bookId = jsonVerseContent.getString("bookId")
+                    verseContent.chapterId = jsonVerseContent.getString("chapterId")
+                    verseContent.bibleId = jsonVerseContent.getString("bibleId")
+                    verseContent.reference = jsonVerseContent.getString("reference")
+
+                    val content = jsonVerseContent.getJSONArray("content").getJSONObject(0).getJSONArray("items")
+                    verseContent.number = content.getJSONObject(0).getJSONObject("attrs").getString("number")
+                    verseContent.text = content.getJSONObject(1).getString("text")
+
+                    //
+
+                    // Database instance
+                    val viewModel: com.ryanada.bibiliatakatifu.versesContent.ViewModel = ViewModelProviders.of(context).get(com.ryanada.bibiliatakatifu.versesContent.ViewModel::class.java)
+
+                    // Remove Older from db
+//                    viewModel.deleteAllBooks()
+
+                    // Save in db
+                    viewModel.saveVerseContent(verseContent)
+
+                    Toast.makeText(context, verseContent.text, Toast.LENGTH_SHORT).show()
+
+                } catch (e: Exception) {
+                    Log.e("fetchingVersesContents", "failed $e")
+
+                }
+            },
+            { error ->
+                Log.e("fetchingVersesContents", "failed $error")
+            }
+        ) { // Passing request headers
+            override fun getHeaders(): Map<String, String> {
+                val headers = HashMap<String, String>()
+                headers["api-key"] = apiKey
+                return headers
+            }
+
+            override fun getParams(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params["content-type"] = contentType
+                return params
+            }
+        }
+
+        // Instantiate the RequestQueue.
+        Volley.newRequestQueue(context).add(stringRequest)
     }
 
 }

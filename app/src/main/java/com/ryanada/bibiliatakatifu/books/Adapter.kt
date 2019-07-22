@@ -12,7 +12,7 @@ import com.google.gson.Gson
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.RowBookBinding
 import com.ryanada.bibiliatakatifu.objects.Book
-import com.ryanada.bibiliatakatifu.verses.Main2Activity
+import com.ryanada.bibiliatakatifu.versesContent.Main2Activity
 
 public class Adapter(val activity: MainActivity) : RecyclerView.Adapter<Adapter.BookRow>() {
 
