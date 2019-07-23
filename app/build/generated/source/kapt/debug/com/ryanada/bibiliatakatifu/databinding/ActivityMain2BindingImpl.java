@@ -16,10 +16,11 @@ public class ActivityMain2BindingImpl extends ActivityMain2Binding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.ll, 2);
         sViewsWithIds.put(R.id.tvChapter, 3);
-        sViewsWithIds.put(R.id.gridview, 4);
-        sViewsWithIds.put(R.id.rvVerses, 5);
-        sViewsWithIds.put(R.id.btnPrev, 6);
-        sViewsWithIds.put(R.id.btnNext, 7);
+        sViewsWithIds.put(R.id.svSearch, 4);
+        sViewsWithIds.put(R.id.gridview, 5);
+        sViewsWithIds.put(R.id.rvVerses, 6);
+        sViewsWithIds.put(R.id.btnPrev, 7);
+        sViewsWithIds.put(R.id.btnNext, 8);
     }
     // views
     @NonNull
@@ -30,15 +31,16 @@ public class ActivityMain2BindingImpl extends ActivityMain2Binding  {
     // Inverse Binding Event Handlers
 
     public ActivityMain2BindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ActivityMain2BindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (com.google.android.material.button.MaterialButton) bindings[8]
             , (com.google.android.material.button.MaterialButton) bindings[7]
-            , (com.google.android.material.button.MaterialButton) bindings[6]
-            , (android.widget.GridView) bindings[4]
+            , (android.widget.GridView) bindings[5]
             , (android.widget.LinearLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[5]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
+            , (androidx.appcompat.widget.SearchView) bindings[4]
             , (androidx.appcompat.widget.Toolbar) bindings[1]
             , (android.widget.TextView) bindings[3]
             );

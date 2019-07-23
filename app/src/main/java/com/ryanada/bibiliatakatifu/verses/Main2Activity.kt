@@ -42,6 +42,17 @@ class Main2Activity : AppCompatActivity() {
         binding.rvVerses.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.rvVerses.adapter = verseAdapter
 
+        // Hide grid on scroll
+        binding.rvVerses.addOnScrollListener(
+            object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    binding.gridview.visibility = View.GONE
+                }
+
+            })
+
+
         // Get chapters
         val chapters = SqliteTransactions(this).getChapters(book)
 
@@ -51,9 +62,12 @@ class Main2Activity : AppCompatActivity() {
             val gridView = binding.gridview
             gridView.visibility = View.VISIBLE
 
+
             val chaptersAdapter = ChaptersAdapter(this, chapters, binding, verseAdapter)
             gridView.adapter = chaptersAdapter
 
+            // Close serach view if open
+            binding.svSearch.isIconified = true
         }
 
 
@@ -72,6 +86,7 @@ class Main2Activity : AppCompatActivity() {
                 Toast.makeText(this, "This is the last chapter of " + book.book, Toast.LENGTH_SHORT).show()
 //                Snackbar.make(binding.root, "This is the last chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
+            binding.gridview.visibility = View.GONE
         }
 
 
@@ -90,6 +105,13 @@ class Main2Activity : AppCompatActivity() {
                 Toast.makeText(this, "This is the first chapter of " + book.book, Toast.LENGTH_SHORT).show()
 //                Snackbar.make(binding.root, "This is the first chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
+            binding.gridview.visibility = View.GONE
+        }
+
+
+        // Search
+        binding.svSearch.setOnSearchClickListener {
+            binding.gridview.visibility = View.GONE
         }
 
 

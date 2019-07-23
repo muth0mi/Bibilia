@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -36,6 +37,9 @@ public abstract class ActivityMain2Binding extends ViewDataBinding {
   public final RecyclerView rvVerses;
 
   @NonNull
+  public final SearchView svSearch;
+
+  @NonNull
   public final Toolbar toolBar;
 
   @NonNull
@@ -49,13 +53,14 @@ public abstract class ActivityMain2Binding extends ViewDataBinding {
 
   protected ActivityMain2Binding(Object _bindingComponent, View _root, int _localFieldCount,
       MaterialButton btnNext, MaterialButton btnPrev, GridView gridview, LinearLayout ll,
-      RecyclerView rvVerses, Toolbar toolBar, TextView tvChapter) {
+      RecyclerView rvVerses, SearchView svSearch, Toolbar toolBar, TextView tvChapter) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnNext = btnNext;
     this.btnPrev = btnPrev;
     this.gridview = gridview;
     this.ll = ll;
     this.rvVerses = rvVerses;
+    this.svSearch = svSearch;
     this.toolBar = toolBar;
     this.tvChapter = tvChapter;
   }
