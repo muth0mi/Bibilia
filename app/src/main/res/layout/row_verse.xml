@@ -7,7 +7,7 @@
 
         <variable
             name="verse"
-            type="com.ryanada.bibiliatakatifu.objects.VerseContent" />
+            type="com.ryanada.bibiliatakatifu.objects.Verse" />
 
     </data>
 
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="11"
-                android:text='@{ verse.number}'
+                android:text='@{ verse.verseNumber}'
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="      Behold a virgin shall be with child, and bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us. "
-                android:text='@{"\t  " +verse.text}'
+                android:text='@{"\t  " +verse.verse}'
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

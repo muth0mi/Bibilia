@@ -28,7 +28,7 @@
                 android:id="@+id/tvBookName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{book.name}"
+                android:text="@{book.book}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,11 +37,12 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{book.nameLong}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvBookName" />
+            android:text="@{book.nameLong}"
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -34,8 +34,8 @@
 22-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:13:9-40
 23        <activity
 23-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:14:9-16:73
-24            android:name="com.ryanada.bibiliatakatifu.versesContent.Main2Activity"
-24-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:15:13-83
+24            android:name="com.ryanada.bibiliatakatifu.verses.Main2Activity"
+24-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:15:13-76
 25            android:parentActivityName="com.ryanada.bibiliatakatifu.books.MainActivity" />
 25-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:16:13-61
 26        <activity android:name="com.ryanada.bibiliatakatifu.books.MainActivity" >

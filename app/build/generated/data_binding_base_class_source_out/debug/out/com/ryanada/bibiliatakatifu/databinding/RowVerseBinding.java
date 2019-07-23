@@ -11,7 +11,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.ryanada.bibiliatakatifu.R;
-import com.ryanada.bibiliatakatifu.objects.VerseContent;
+import com.ryanada.bibiliatakatifu.objects.Verse;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -20,7 +20,7 @@ public abstract class RowVerseBinding extends ViewDataBinding {
   public final TextView tvVerseNumber;
 
   @Bindable
-  protected VerseContent mVerse;
+  protected Verse mVerse;
 
   protected RowVerseBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView tvVerseNumber) {
@@ -28,10 +28,10 @@ public abstract class RowVerseBinding extends ViewDataBinding {
     this.tvVerseNumber = tvVerseNumber;
   }
 
-  public abstract void setVerse(@Nullable VerseContent verse);
+  public abstract void setVerse(@Nullable Verse verse);
 
   @Nullable
-  public VerseContent getVerse() {
+  public Verse getVerse() {
     return mVerse;
   }
 

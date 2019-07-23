@@ -18,15 +18,13 @@ public class RowBookBindingImpl extends RowBookBinding  {
     // views
     @NonNull
     private final com.google.android.material.card.MaterialCardView mboundView0;
-    @NonNull
-    private final android.widget.TextView mboundView2;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public RowBookBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
     }
     private RowBookBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
@@ -34,8 +32,6 @@ public class RowBookBindingImpl extends RowBookBinding  {
             );
         this.mboundView0 = (com.google.android.material.card.MaterialCardView) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView2 = (android.widget.TextView) bindings[2];
-        this.mboundView2.setTag(null);
         this.tvBookName.setTag(null);
         setRootTag(root);
         // listeners
@@ -95,27 +91,23 @@ public class RowBookBindingImpl extends RowBookBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String bookName = null;
+        java.lang.String bookBook = null;
         com.ryanada.bibiliatakatifu.objects.Book book = mBook;
-        java.lang.String bookNameLong = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
                 if (book != null) {
-                    // read book.name
-                    bookName = book.getName();
-                    // read book.nameLong
-                    bookNameLong = book.getNameLong();
+                    // read book.book
+                    bookBook = book.getBook();
                 }
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, bookNameLong);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvBookName, bookName);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvBookName, bookBook);
         }
     }
     // Listener Stub Implementations

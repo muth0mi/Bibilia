@@ -64,7 +64,7 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.verse == variableId) {
-            setVerse((com.ryanada.bibiliatakatifu.objects.VerseContent) variable);
+            setVerse((com.ryanada.bibiliatakatifu.objects.Verse) variable);
         }
         else {
             variableSet = false;
@@ -72,7 +72,7 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
             return variableSet;
     }
 
-    public void setVerse(@Nullable com.ryanada.bibiliatakatifu.objects.VerseContent Verse) {
+    public void setVerse(@Nullable com.ryanada.bibiliatakatifu.objects.Verse Verse) {
         this.mVerse = Verse;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -95,32 +95,32 @@ public class RowVerseBindingImpl extends RowVerseBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.ryanada.bibiliatakatifu.objects.VerseContent verse = mVerse;
-        java.lang.String verseNumber = null;
-        java.lang.String verseText = null;
-        java.lang.String javaLangStringTVerseText = null;
+        com.ryanada.bibiliatakatifu.objects.Verse verse = mVerse;
+        java.lang.String verseVerseNumber = null;
+        java.lang.String verseVerse = null;
+        java.lang.String javaLangStringTVerseVerse = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
                 if (verse != null) {
-                    // read verse.number
-                    verseNumber = verse.getNumber();
-                    // read verse.text
-                    verseText = verse.getText();
+                    // read verse.verseNumber
+                    verseVerseNumber = verse.getVerseNumber();
+                    // read verse.verse
+                    verseVerse = verse.getVerse();
                 }
 
 
-                // read ("\t  ") + (verse.text)
-                javaLangStringTVerseText = ("\t  ") + (verseText);
+                // read ("\t  ") + (verse.verse)
+                javaLangStringTVerseVerse = ("\t  ") + (verseVerse);
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, javaLangStringTVerseText);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvVerseNumber, verseNumber);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, javaLangStringTVerseVerse);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvVerseNumber, verseVerseNumber);
         }
     }
     // Listener Stub Implementations
