@@ -56,13 +56,6 @@ class Main2Activity : AppCompatActivity() {
 
         }
 
-        // Get Verses in chapter 1
-        val chapter = Chapter()
-        chapter.chapter = "1"
-        chapter.book = book.book
-        val verses = SqliteTransactions(this).getVerses(chapter)
-        verseAdapter.setVerses(verses)
-
 
         // Btn Next chapter
         binding.btnNext.setOnClickListener {
@@ -76,10 +69,11 @@ class Main2Activity : AppCompatActivity() {
                 // Update displayed chapter
                 binding.tvChapter.text = (nextIndex + 1).toString()
             } catch (_: Exception) {
-                Toast.makeText(this, "This is the last chapter of " + chapter.book, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "This is the last chapter of " + book.book, Toast.LENGTH_SHORT).show()
 //                Snackbar.make(binding.root, "This is the last chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
         }
+
 
         // Btn Prev chapter
         binding.btnPrev.setOnClickListener {
@@ -93,11 +87,18 @@ class Main2Activity : AppCompatActivity() {
                 // Update displayed chapter
                 binding.tvChapter.text = (previousIndex + 1).toString()
             } catch (_: Exception) {
-                Toast.makeText(this, "This is the first chapter of " + chapter.book, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "This is the first chapter of " + book.book, Toast.LENGTH_SHORT).show()
 //                Snackbar.make(binding.root, "This is the first chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
         }
 
+
+        // Get Verses in chapter 1
+        val chapter = Chapter()
+        chapter.chapter = "1"
+        chapter.book = book.book
+        val verses = SqliteTransactions(this).getVerses(chapter)
+        verseAdapter.setVerses(verses)
     }
 
 

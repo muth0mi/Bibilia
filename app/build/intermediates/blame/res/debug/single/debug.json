@@ -132,6 +132,10 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-hdpi/ic_baseline_navigate_before_24px.png"
     },
     {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable_background_chapter_number_current.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/drawable/background_chapter_number_current.xml"
+    },
+    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_background.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },

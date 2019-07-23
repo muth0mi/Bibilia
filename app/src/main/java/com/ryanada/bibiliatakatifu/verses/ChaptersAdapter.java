@@ -64,6 +64,11 @@ public class ChaptersAdapter extends BaseAdapter {
         final ViewHolder viewHolder = (ViewHolder) convertView.getTag();
         viewHolder.tvChapterNumber.setText(chapters.get(position).getChapter());
 
+        // Highlight current chapter
+        if (position == Integer.valueOf(binding.tvChapter.getText().toString()) - 1)
+            viewHolder.tvChapterNumber.setBackground(activity.getResources().getDrawable(R.drawable.background_chapter_number_current));
+
+
         // Handler for chapter number click
         viewHolder.tvChapterNumber.setOnClickListener(view -> {
                     //Show verses in selected chapter
