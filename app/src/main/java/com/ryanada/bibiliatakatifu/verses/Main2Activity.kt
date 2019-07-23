@@ -43,15 +43,13 @@ class Main2Activity : AppCompatActivity() {
 
         // Get chapters
         val chapters = SqliteTransactions(this).getChapters(book)
-        for (chater in chapters)
-            Toast.makeText(this, chater.chapter, Toast.LENGTH_SHORT).show()
 
 
         // Get Verses in chapter 1
         val chapter = Chapter()
         chapter.chapter = "1"
         val verses = SqliteTransactions(this).getVerses(chapter)
-        
+
         // Populate recyclerview
         populateListView(verseAdapter, verses)
 
