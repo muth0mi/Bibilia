@@ -12,6 +12,10 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_book.xml"
     },
     {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/row_chapter.xml",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_chapter.xml"
+    },
+    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/row_verse.xml",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_verse.xml"
     }

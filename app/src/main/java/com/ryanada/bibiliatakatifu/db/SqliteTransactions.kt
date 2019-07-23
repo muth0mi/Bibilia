@@ -129,7 +129,7 @@ public class SqliteTransactions(val activity: Activity) {
         val verses = ArrayList<Verse>()
 
         // Select All Query
-        val query = "SELECT $KEY_BOOKS, $KEY_CHAPTERS, $KEY_V_NO, $KEY_VERSES FROM $TABLE_BIBLE WHERE $KEY_BOOKS = 'Mwanzo' AND $KEY_CHAPTERS = '" + chapter.chapter + "'"
+        val query = "SELECT $KEY_BOOKS, $KEY_CHAPTERS, $KEY_V_NO, $KEY_VERSES FROM $TABLE_BIBLE WHERE $KEY_BOOKS = '" + chapter.book + "' AND $KEY_CHAPTERS = '" + chapter.chapter + "'"
 
         val db = getDatabase()
         val cursor = db.rawQuery(query, null)

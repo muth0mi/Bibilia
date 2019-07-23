@@ -24,6 +24,10 @@
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main2.xml"
     },
     {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/layout_row_chapter.xml.flat",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_chapter.xml"
+    },
+    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },

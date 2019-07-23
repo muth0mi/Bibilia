@@ -5,9 +5,11 @@ public class BR {
 
   public static final int book = 1;
 
-  public static final int subtitle = 2;
+  public static final int chapterNumber = 2;
 
-  public static final int title = 3;
+  public static final int subtitle = 3;
 
-  public static final int verse = 4;
+  public static final int title = 4;
+
+  public static final int verse = 5;
 }

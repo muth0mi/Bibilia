@@ -14,7 +14,12 @@ public class ActivityMain2BindingImpl extends ActivityMain2Binding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.rvVerses, 2);
+        sViewsWithIds.put(R.id.ll, 2);
+        sViewsWithIds.put(R.id.tvChapter, 3);
+        sViewsWithIds.put(R.id.gridview, 4);
+        sViewsWithIds.put(R.id.rvVerses, 5);
+        sViewsWithIds.put(R.id.btnPrev, 6);
+        sViewsWithIds.put(R.id.btnNext, 7);
     }
     // views
     @NonNull
@@ -25,12 +30,17 @@ public class ActivityMain2BindingImpl extends ActivityMain2Binding  {
     // Inverse Binding Event Handlers
 
     public ActivityMain2BindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private ActivityMain2BindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
+            , (com.google.android.material.button.MaterialButton) bindings[7]
+            , (com.google.android.material.button.MaterialButton) bindings[6]
+            , (android.widget.GridView) bindings[4]
+            , (android.widget.LinearLayout) bindings[2]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[5]
             , (androidx.appcompat.widget.Toolbar) bindings[1]
+            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);

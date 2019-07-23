@@ -1432,6 +1432,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnNext
+id btnPrev
 id buttonPanel
 id cancel_button
 id center
@@ -1487,6 +1489,7 @@ id fixed
 id forever
 id ghost_view
 id gone
+id gridview
 id group_divider
 id groups
 id hideable
@@ -1507,6 +1510,7 @@ id line1
 id line3
 id listMode
 id list_item
+id ll
 id masked
 id message
 id middle
@@ -1648,6 +1652,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvBookName
+id tvChapter
+id tvChapterNumber
 id tvVerseNumber
 id unchecked
 id uniform
@@ -1772,6 +1778,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout row_book
+layout row_chapter
 layout row_verse
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

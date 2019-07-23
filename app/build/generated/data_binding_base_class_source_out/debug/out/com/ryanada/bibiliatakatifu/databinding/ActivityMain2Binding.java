@@ -4,6 +4,9 @@ package com.ryanada.bibiliatakatifu.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -11,16 +14,32 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.button.MaterialButton;
 import com.ryanada.bibiliatakatifu.R;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityMain2Binding extends ViewDataBinding {
   @NonNull
+  public final MaterialButton btnNext;
+
+  @NonNull
+  public final MaterialButton btnPrev;
+
+  @NonNull
+  public final GridView gridview;
+
+  @NonNull
+  public final LinearLayout ll;
+
+  @NonNull
   public final RecyclerView rvVerses;
 
   @NonNull
   public final Toolbar toolBar;
+
+  @NonNull
+  public final TextView tvChapter;
 
   @Bindable
   protected String mTitle;
@@ -29,10 +48,16 @@ public abstract class ActivityMain2Binding extends ViewDataBinding {
   protected String mSubtitle;
 
   protected ActivityMain2Binding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView rvVerses, Toolbar toolBar) {
+      MaterialButton btnNext, MaterialButton btnPrev, GridView gridview, LinearLayout ll,
+      RecyclerView rvVerses, Toolbar toolBar, TextView tvChapter) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.btnNext = btnNext;
+    this.btnPrev = btnPrev;
+    this.gridview = gridview;
+    this.ll = ll;
     this.rvVerses = rvVerses;
     this.toolBar = toolBar;
+    this.tvChapter = tvChapter;
   }
 
   public abstract void setTitle(@Nullable String title);
