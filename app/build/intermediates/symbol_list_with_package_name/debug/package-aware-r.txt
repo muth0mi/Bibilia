@@ -769,6 +769,7 @@ color colorBackground
 color colorPrimary
 color colorPrimaryDark
 color colorSurface
+color colorSurfaceLight
 color colorToolbar
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1311,6 +1312,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable folded_bible
+drawable ic_baseline_bookmarks_24px
+drawable ic_baseline_favorite_border_24px
 drawable ic_baseline_navigate_before_24px
 drawable ic_baseline_navigate_next_24px
 drawable ic_baseline_search_24px
@@ -1330,6 +1333,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_settings
+drawable ic_toggle_darktheme
 drawable logo
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1530,12 +1535,12 @@ id mtrl_picker_header
 id mtrl_picker_header_text
 id mtrl_picker_title_text
 id multiply
+id nav_bookmarks
 id nav_controller_view_tag
-id nav_gallery
-id nav_home
-id nav_send
-id nav_share
-id nav_slideshow
+id nav_darkMode
+id nav_favourites
+id nav_search
+id nav_settings
 id nav_view
 id navigation_header_container
 id never
@@ -1825,6 +1830,7 @@ string abc_toolbar_collapse_description
 string action_settings
 string app_name
 string appbar_scrolling_view_behavior
+string books
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -1856,9 +1862,14 @@ string mtrl_picker_range_header_title
 string mtrl_picker_range_header_unselected
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nav_bookmarks
+string nav_dark_mode
+string nav_favourites
 string nav_header_desc
 string nav_header_subtitle
 string nav_header_title
+string nav_search
+string nav_settings
 string navigation_drawer_close
 string navigation_drawer_open
 string newTestament
@@ -1868,6 +1879,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string preferences
+string searchBook
+string searchInChapter
 string search_menu_title
 string status_bar_notification_info_overflow
 string tab_text_1
@@ -2358,6 +2372,7 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style ToolbarTheme
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

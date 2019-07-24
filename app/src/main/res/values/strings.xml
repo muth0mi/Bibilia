@@ -19,4 +19,13 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="newTestament">Agano Jipya</string>
     <string name="oldTestament">Agano La Kale</string>
+    <string name="books">Vitabu</string>
+    <string name="searchBook">Tafuta kitabu</string>
+    <string name="searchInChapter">Tafuta fungu</string>
+    <string name="nav_search">Tafuta Fungu</string>
+    <string name="nav_bookmarks">Vialamisho</string>
+    <string name="nav_favourites">Fungu unazopenda</string>
+    <string name="nav_dark_mode">Hali ya giza</string>
+    <string name="nav_settings">Mipangilio</string>
+    <string name="preferences">Mapendeleo</string>
 </resources>

@@ -4,7 +4,6 @@ package com.ryanada.bibiliatakatifu.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
@@ -23,9 +22,6 @@ public abstract class ActivityBooksAppbarBinding extends ViewDataBinding {
   public final CollapsingToolbarLayout collapsingToolbarLayout;
 
   @NonNull
-  public final LinearLayout ll;
-
-  @NonNull
   public final SearchView svSearch;
 
   @NonNull
@@ -38,11 +34,10 @@ public abstract class ActivityBooksAppbarBinding extends ViewDataBinding {
   public final ViewPager viewPager;
 
   protected ActivityBooksAppbarBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CollapsingToolbarLayout collapsingToolbarLayout, LinearLayout ll, SearchView svSearch,
-      TabLayout tabLayout, MaterialToolbar toolBar, ViewPager viewPager) {
+      CollapsingToolbarLayout collapsingToolbarLayout, SearchView svSearch, TabLayout tabLayout,
+      MaterialToolbar toolBar, ViewPager viewPager) {
     super(_bindingComponent, _root, _localFieldCount);
     this.collapsingToolbarLayout = collapsingToolbarLayout;
-    this.ll = ll;
     this.svSearch = svSearch;
     this.tabLayout = tabLayout;
     this.toolBar = toolBar;

@@ -22,7 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|snap|enterAlways"
-                app:title="Books"
                 app:toolbarId="@+id/toolBar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,37 +35,36 @@
                         android:layout_height="match_parent"
                         android:gravity="end"
                         app:layout_collapseMode="pin"
-                        app:layout_constraintEnd_toStartOf="@id/ll"
+                        app:layout_constraintEnd_toStartOf="@id/svSearch"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:title="Books" />
+                        app:theme="@style/ToolbarTheme"
+                        app:titleTextColor="@color/colorSurface">
 
-                    <LinearLayout
-                        android:id="@+id/ll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center|end"
-                        android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-
-                        <androidx.appcompat.widget.SearchView
-                            android:id="@+id/svSearch"
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#0fff"
-                            app:iconifiedByDefault="true"
-                            app:queryHint="Search book" />
-                    </LinearLayout>
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@string/books"
+                            android:textAppearance="?attr/titleTextAppearance"
+                            android:textColor="@color/colorSurface"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.appbar.MaterialToolbar>
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/svSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#0fff"
+                        android:gravity="center|end"
+                        app:iconifiedByDefault="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:queryHint="@string/searchBook" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                <!-- <com.google.android.material.appbar.MaterialToolbar
-                     android:id="@+id/toolBar"
-                     android:layout_width="match_parent"
-                     android:layout_height="?actionBarSize"
-                     app:layout_collapseMode="none"
-                     app:title="@{title}" />-->
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -75,8 +73,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0000"
-                app:tabGravity="center"
-                app:tabTextAppearance="@style/AppTheme.TabLayoutText" />
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorSurface"
+                app:tabSelectedTextColor="@color/colorSurface"
+                app:tabTextAppearance="@style/AppTheme.TabLayoutText"
+                app:tabTextColor="@color/colorSurfaceLight" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

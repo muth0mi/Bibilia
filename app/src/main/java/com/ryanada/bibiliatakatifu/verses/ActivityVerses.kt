@@ -3,6 +3,8 @@ package com.ryanada.bibiliatakatifu.verses
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.AutoCompleteTextView
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -139,9 +141,20 @@ class ActivityVerses : AppCompatActivity() {
 
 
         // Search
-        binding.svSearch.setOnSearchClickListener {
+        val searchView = binding.svSearch
+        searchView.setOnSearchClickListener {
             binding.gridLayout.visibility = View.GONE
         }
+
+        //change search icon color
+        val searchIcon = searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_button)
+        searchIcon.setColorFilter(resources.getColor(R.color.colorSurface))
+
+        //change search icon color
+        val searchAutoComplete = searchView.findViewById<AutoCompleteTextView>(androidx.appcompat.R.id.search_src_text)
+        searchAutoComplete.setHintTextColor(resources.getColor(R.color.colorSurfaceLight))
+        searchAutoComplete.setTextColor(resources.getColor(R.color.colorSurface))
+
         binding.svSearch.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
 

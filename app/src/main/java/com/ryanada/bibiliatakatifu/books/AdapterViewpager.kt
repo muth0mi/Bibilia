@@ -12,8 +12,13 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
 
     // Called to instantiate the fragment for the given page.
     override fun getItem(position: Int): Fragment {
-        // Return a FragmentTestament
-        return FragmentTestament.newInstance(position)
+        // Return a FragmentTestamentOld
+        if (position == 0)
+            return FragmentTestamentOld()
+        else if (position == 1)
+            return FragmentTestamentNew()
+
+        return Fragment()
     }
 
     // Tab names

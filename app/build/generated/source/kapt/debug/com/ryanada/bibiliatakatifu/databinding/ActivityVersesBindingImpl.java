@@ -38,7 +38,7 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
         super(bindingComponent, root, 0
             , (android.widget.ImageButton) bindings[5]
             , (android.widget.ImageButton) bindings[3]
-            , (android.widget.GridLayout) bindings[7]
+            , (com.google.android.material.circularreveal.CircularRevealGridLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[9]
             , (androidx.appcompat.widget.SearchView) bindings[6]

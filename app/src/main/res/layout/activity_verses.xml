@@ -43,7 +43,9 @@
                         app:layout_constraintEnd_toStartOf="@id/ll"
                         app:layout_constraintStart_toStartOf="parent"
                         app:subtitle="@{subtitle}"
-                        app:title="@{title}" />
+                        app:theme="@style/ToolbarTheme"
+                        app:title="@{title}"
+                        app:titleTextColor="@color/colorSurface" />
 
                     <LinearLayout
                         android:id="@+id/ll"
@@ -62,7 +64,7 @@
                             android:minWidth="0dp"
                             android:minHeight="0dp"
                             android:src="@drawable/ic_baseline_navigate_before_24px"
-                            android:tint="#888" />
+                            android:tint="@color/colorSurface" />
 
                         <TextView
                             android:id="@+id/tvChapter"
@@ -71,6 +73,7 @@
                             android:background="@drawable/background_chapter_number"
                             android:gravity="center"
                             android:text="1"
+                            android:textColor="@color/colorSurface"
                             android:textStyle="bold" />
 
                         <ImageButton
@@ -81,7 +84,7 @@
                             android:minWidth="0dp"
                             android:minHeight="0dp"
                             android:src="@drawable/ic_baseline_navigate_next_24px"
-                            android:tint="#888" />
+                            android:tint="@color/colorSurface" />
 
 
                         <androidx.appcompat.widget.SearchView
@@ -89,8 +92,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="#0fff"
+                            android:foregroundTint="@color/colorSurface"
                             app:iconifiedByDefault="true"
-                            app:queryHint="Search in this chapter" />
+                            app:queryHint="@string/searchInChapter" />
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -98,13 +102,13 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <GridLayout
+            <com.google.android.material.circularreveal.CircularRevealGridLayout
                 android:id="@+id/gridLayout"
-                android:visibility="gone"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:columnCount="6" />
+                android:layout_gravity="center"
+                android:columnCount="6"
+                android:visibility="gone" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -118,7 +122,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
 
 
                 <TextView

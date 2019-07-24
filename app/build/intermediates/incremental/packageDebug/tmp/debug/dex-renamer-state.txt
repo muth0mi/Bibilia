@@ -1,4 +1,4 @@
-#Wed Jul 24 16:22:45 EAT 2019
+#Wed Jul 24 18:38:09 EAT 2019
 base.0=/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

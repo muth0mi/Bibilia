@@ -16,10 +16,9 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.collapsingToolbarLayout, 1);
         sViewsWithIds.put(R.id.toolBar, 2);
-        sViewsWithIds.put(R.id.ll, 3);
-        sViewsWithIds.put(R.id.svSearch, 4);
-        sViewsWithIds.put(R.id.tabLayout, 5);
-        sViewsWithIds.put(R.id.viewPager, 6);
+        sViewsWithIds.put(R.id.svSearch, 3);
+        sViewsWithIds.put(R.id.tabLayout, 4);
+        sViewsWithIds.put(R.id.viewPager, 5);
     }
     // views
     @NonNull
@@ -30,16 +29,15 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     // Inverse Binding Event Handlers
 
     public ActivityBooksAppbarBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ActivityBooksAppbarBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[1]
-            , (android.widget.LinearLayout) bindings[3]
-            , (androidx.appcompat.widget.SearchView) bindings[4]
-            , (com.google.android.material.tabs.TabLayout) bindings[5]
+            , (androidx.appcompat.widget.SearchView) bindings[3]
+            , (com.google.android.material.tabs.TabLayout) bindings[4]
             , (com.google.android.material.appbar.MaterialToolbar) bindings[2]
-            , (androidx.viewpager.widget.ViewPager) bindings[6]
+            , (androidx.viewpager.widget.ViewPager) bindings[5]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
