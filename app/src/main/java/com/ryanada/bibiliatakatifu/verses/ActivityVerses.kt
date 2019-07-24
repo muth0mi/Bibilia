@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,11 +14,14 @@ import com.ryanada.bibiliatakatifu.databinding.ActivityVersesBinding
 import com.ryanada.bibiliatakatifu.db.SQliteTransactions
 import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.objects.Chapter
+import com.ryanada.bibiliatakatifu.objects.Verse
 
 
 class ActivityVerses : AppCompatActivity() {
 
     private lateinit var binding: ActivityVersesBinding
+
+    private var verses: ArrayList<Verse> = ArrayList()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +39,6 @@ class ActivityVerses : AppCompatActivity() {
 
         // Page title
         binding.title = book.book
-//        binding.subtitle = book.nameLong
 
         // Populate recyclerView with bible verses
         val verseAdapter = AdapterRecyclerviewVerses(this)
@@ -62,7 +65,6 @@ class ActivityVerses : AppCompatActivity() {
             val gridView = binding.gridview
             gridView.visibility = View.VISIBLE
 
-
             val chaptersAdapter = AdapterGridviewChapters(this, chapters, binding, verseAdapter)
             gridView.adapter = chaptersAdapter
 
@@ -81,12 +83,12 @@ class ActivityVerses : AppCompatActivity() {
                 // Show chapter verses
                 val verses = SQliteTransactions(this).getVerses(chapters[nextIndex])
                 verseAdapter.setVerses(verses)
+                this.verses = verses
 
                 // Update displayed chapter
                 binding.tvChapter.text = (nextIndex + 1).toString()
             } catch (_: Exception) {
                 Toast.makeText(this, "This is the last chapter of " + book.book, Toast.LENGTH_SHORT).show()
-//                Snackbar.make(binding.root, "This is the last chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
             binding.gridview.visibility = View.GONE
         }
@@ -100,12 +102,12 @@ class ActivityVerses : AppCompatActivity() {
                 // Show chapter verses
                 val verses = SQliteTransactions(this).getVerses(chapters[previousIndex])
                 verseAdapter.setVerses(verses)
+                this.verses = verses
 
                 // Update displayed chapter
                 binding.tvChapter.text = (previousIndex + 1).toString()
             } catch (_: Exception) {
                 Toast.makeText(this, "This is the first chapter of " + book.book, Toast.LENGTH_SHORT).show()
-//                Snackbar.make(binding.root, "This is the first chapter of " + chapter.book, Snackbar.LENGTH_SHORT).show()
             }
             binding.gridview.visibility = View.GONE
         }
@@ -115,6 +117,32 @@ class ActivityVerses : AppCompatActivity() {
         binding.svSearch.setOnSearchClickListener {
             binding.gridview.visibility = View.GONE
         }
+        binding.svSearch.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener {
+
+
+                override fun onQueryTextChange(newText: String): Boolean {
+                    // Search query
+                    val results = ArrayList<Verse>()
+                    for (verse in verses) {
+                        if (verse.verse!!.toLowerCase().contains(newText.toLowerCase())) {
+                            results.add(verse)
+                        }
+                        verseAdapter.setVerses(results)
+
+                        if (results.isEmpty()) binding.tvNoResults.visibility = View.VISIBLE
+                        else binding.tvNoResults.visibility = View.GONE
+                    }
+
+                    return false
+                }
+
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    // task HERE
+                    return false
+                }
+
+            })
 
 
         // Get Verses in chapter 1
@@ -123,6 +151,8 @@ class ActivityVerses : AppCompatActivity() {
         chapter.book = book.book
         val verses = SQliteTransactions(this).getVerses(chapter)
         verseAdapter.setVerses(verses)
+        this.verses = verses
+
     }
 
 

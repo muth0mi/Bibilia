@@ -22,16 +22,15 @@
         tools:context=".chapters.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-          >
+            style="@style/AppTheme.ToolBar"
+            app:liftOnScroll="false">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/AppTheme.ToolBar"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize">
 
@@ -39,6 +38,7 @@
                         android:id="@+id/toolBar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="@color/colorToolbar"
                         android:gravity="end"
                         app:layout_collapseMode="pin"
                         app:layout_constraintEnd_toStartOf="@id/ll"
@@ -50,6 +50,7 @@
                         android:id="@+id/ll"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:background="@color/colorToolbar"
                         android:gravity="center|end"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent">
@@ -66,7 +67,10 @@
                         <androidx.appcompat.widget.SearchView
                             android:id="@+id/svSearch"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:background="#0fff"
+                            app:queryBackground="@color/colorToolbar"
+                            app:queryHint="Search in this chapter" />
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,41 +80,51 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">-->
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">-->
 
-            <LinearLayout
-                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <GridView
+                android:id="@+id/gridview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:columnWidth="36dp"
+                android:gravity="center"
+                android:horizontalSpacing="36dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="spacingWidthUniform"
+                android:verticalSpacing="12dp"
+                android:visibility="gone"
+                tools:ignore="UnusedAttribute" />
 
-                <GridView
-                    android:id="@+id/gridview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnWidth="36dp"
-                    android:gravity="center"
-                    android:horizontalSpacing="36dp"
-                    android:numColumns="auto_fit"
-                    android:stretchMode="spacingWidthUniform"
-                    android:verticalSpacing="12dp"
-                    android:visibility="gone"
-                    tools:ignore="UnusedAttribute" />
+            <TextView
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_marginTop="36dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:id="@+id/tvNoResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No results" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvVerses"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
-                    android:scrollbars="vertical"
-                    tools:ignore="UnusedAttribute" />
-                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvVerses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="vertical"
+                tools:ignore="UnusedAttribute" />
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
-            </LinearLayout>
-<!--        </ScrollView>-->
+        </LinearLayout>
+        <!--        </ScrollView>-->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPrev"

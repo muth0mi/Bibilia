@@ -14,8 +14,9 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.tabLayout, 2);
-        sViewsWithIds.put(R.id.viewPager, 3);
+        sViewsWithIds.put(R.id.collapsingToolbarLayout, 2);
+        sViewsWithIds.put(R.id.tabLayout, 3);
+        sViewsWithIds.put(R.id.viewPager, 4);
     }
     // views
     @NonNull
@@ -26,13 +27,14 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     // Inverse Binding Event Handlers
 
     public ActivityBooksAppbarBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private ActivityBooksAppbarBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.tabs.TabLayout) bindings[2]
-            , (androidx.appcompat.widget.Toolbar) bindings[1]
-            , (androidx.viewpager.widget.ViewPager) bindings[3]
+            , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[2]
+            , (com.google.android.material.tabs.TabLayout) bindings[3]
+            , (com.google.android.material.appbar.MaterialToolbar) bindings[1]
+            , (androidx.viewpager.widget.ViewPager) bindings[4]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);

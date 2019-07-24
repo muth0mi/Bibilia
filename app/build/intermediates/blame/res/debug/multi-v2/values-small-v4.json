@@ -4,7 +4,7 @@
             "outputFile": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/15c208691533ab42642d274cf63580be/material-1.1.0-alpha08/res/values-small-v4/values-small-v4.xml",
+                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/fbab14279860a771084cecc20b5399e2/material-1.1.0-alpha07/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

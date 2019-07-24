@@ -3,19 +3,22 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!--Edge to edge-->
-        <item name="android:statusBarColor" tools:ignore="NewApi">#0fff</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/colorToolbar</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!--<item name="android:navigationBarColor">@color/transparent</item>-->
 
-
-        <item name="android:background">#fff</item>
-        <item name="android:typeface">serif</item>
+        <item name="android:background">@color/colorBackground</item>
 
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
+    <style name="AppTheme.ToolBar">
+        <item name="android:background">@color/colorToolbar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="AppTheme.TabLayoutText" parent="TextAppearance.Design.Tab">

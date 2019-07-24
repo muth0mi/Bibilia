@@ -19,7 +19,7 @@
 14        android:allowBackup="true"
 14-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.2.0-alpha01] /home/oly/.gradle/caches/transforms-2/files-2.1/7039d9a1faa4639180009f62e2968ade/core-1.2.0-alpha01/AndroidManifest.xml:22:18-86
+15-->[androidx.core:core:1.1.0-beta01] /home/oly/.gradle/caches/transforms-2/files-2.1/380ef87fe7030be3b3d2fbc0d93b9a93/core-1.1.0-beta01/AndroidManifest.xml:22:18-86
 16        android:debuggable="true"
 17        android:icon="@mipmap/ic_launcher"
 17-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:9:9-43

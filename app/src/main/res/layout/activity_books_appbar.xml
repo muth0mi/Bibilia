@@ -18,29 +18,34 @@
         tools:context=".chapters.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            app:liftOnScroll="true">
+            style="@style/AppTheme.ToolBar"
+            android:background="@color/colorToolbar"
+            app:liftOnScroll="false">
 
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolBar"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                app:title="Books"
+                android:id="@+id/collapsingToolbarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                app:layout_collapseMode="none"
-                app:title="@{title}" />
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|snap|enterAlways"
+                app:toolbarId="@+id/toolBar">
 
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    app:layout_collapseMode="none"
+                    app:title="@{title}" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#0000"
                 app:tabGravity="center"
-                app:tabTextAppearance="@style/AppTheme.TabLayoutText">
-
-            </com.google.android.material.tabs.TabLayout>
+                app:tabTextAppearance="@style/AppTheme.TabLayoutText" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

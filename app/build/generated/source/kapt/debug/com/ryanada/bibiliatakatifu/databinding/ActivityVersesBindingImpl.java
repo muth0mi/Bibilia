@@ -18,9 +18,10 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
         sViewsWithIds.put(R.id.tvChapter, 3);
         sViewsWithIds.put(R.id.svSearch, 4);
         sViewsWithIds.put(R.id.gridview, 5);
-        sViewsWithIds.put(R.id.rvVerses, 6);
-        sViewsWithIds.put(R.id.btnPrev, 7);
-        sViewsWithIds.put(R.id.btnNext, 8);
+        sViewsWithIds.put(R.id.tvNoResults, 6);
+        sViewsWithIds.put(R.id.rvVerses, 7);
+        sViewsWithIds.put(R.id.btnPrev, 8);
+        sViewsWithIds.put(R.id.btnNext, 9);
     }
     // views
     @NonNull
@@ -31,18 +32,19 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityVersesBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
     private ActivityVersesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (com.google.android.material.button.MaterialButton) bindings[9]
             , (com.google.android.material.button.MaterialButton) bindings[8]
-            , (com.google.android.material.button.MaterialButton) bindings[7]
             , (android.widget.GridView) bindings[5]
             , (android.widget.LinearLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
             , (androidx.appcompat.widget.SearchView) bindings[4]
             , (androidx.appcompat.widget.Toolbar) bindings[1]
             , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[6]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);

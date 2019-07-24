@@ -6,11 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.ryanada.bibiliatakatifu.R;
 import java.lang.Deprecated;
@@ -18,10 +19,13 @@ import java.lang.Object;
 
 public abstract class ActivityBooksAppbarBinding extends ViewDataBinding {
   @NonNull
+  public final CollapsingToolbarLayout collapsingToolbarLayout;
+
+  @NonNull
   public final TabLayout tabLayout;
 
   @NonNull
-  public final Toolbar toolBar;
+  public final MaterialToolbar toolBar;
 
   @NonNull
   public final ViewPager viewPager;
@@ -30,8 +34,10 @@ public abstract class ActivityBooksAppbarBinding extends ViewDataBinding {
   protected String mTitle;
 
   protected ActivityBooksAppbarBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TabLayout tabLayout, Toolbar toolBar, ViewPager viewPager) {
+      CollapsingToolbarLayout collapsingToolbarLayout, TabLayout tabLayout, MaterialToolbar toolBar,
+      ViewPager viewPager) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.collapsingToolbarLayout = collapsingToolbarLayout;
     this.tabLayout = tabLayout;
     this.toolBar = toolBar;
     this.viewPager = viewPager;

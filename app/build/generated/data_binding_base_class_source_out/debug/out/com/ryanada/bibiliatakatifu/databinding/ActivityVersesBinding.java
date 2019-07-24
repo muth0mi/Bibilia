@@ -45,6 +45,9 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvChapter;
 
+  @NonNull
+  public final TextView tvNoResults;
+
   @Bindable
   protected String mTitle;
 
@@ -53,7 +56,8 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
 
   protected ActivityVersesBinding(Object _bindingComponent, View _root, int _localFieldCount,
       MaterialButton btnNext, MaterialButton btnPrev, GridView gridview, LinearLayout ll,
-      RecyclerView rvVerses, SearchView svSearch, Toolbar toolBar, TextView tvChapter) {
+      RecyclerView rvVerses, SearchView svSearch, Toolbar toolBar, TextView tvChapter,
+      TextView tvNoResults) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnNext = btnNext;
     this.btnPrev = btnPrev;
@@ -63,6 +67,7 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
     this.svSearch = svSearch;
     this.toolBar = toolBar;
     this.tvChapter = tvChapter;
+    this.tvNoResults = tvNoResults;
   }
 
   public abstract void setTitle(@Nullable String title);

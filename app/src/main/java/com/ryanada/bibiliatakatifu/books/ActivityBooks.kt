@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.ryanada.bibiliatakatifu.R
@@ -29,8 +30,9 @@ class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         // Set Page Title
         binding.title = "Books"
 
-        val toolbar: Toolbar = binding.include.toolBar
+        val toolbar: MaterialToolbar = binding.include.toolBar
         setSupportActionBar(toolbar)
+        supportActionBar?.setTitle("Books")
 
         // Tab layout
         val tabLayout: TabLayout = binding.include.tabLayout
