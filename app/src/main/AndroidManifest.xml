@@ -11,17 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.ryanada.bibiliatakatifu.verses.Main2Activity"
-            android:parentActivityName=".books.MainActivity"></activity>
 
-        <activity android:name=".books.MainActivity">
+
+        <activity
+            android:name=".books.ActivityBooks"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".verses.ActivityVerses"
+            android:parentActivityName=".books.ActivityBooks"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

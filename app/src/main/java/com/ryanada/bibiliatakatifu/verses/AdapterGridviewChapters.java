@@ -8,47 +8,42 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.ryanada.bibiliatakatifu.R;
-import com.ryanada.bibiliatakatifu.databinding.ActivityMain2Binding;
+import com.ryanada.bibiliatakatifu.databinding.ActivityVersesBinding;
 import com.ryanada.bibiliatakatifu.db.SQliteTransactions;
 import com.ryanada.bibiliatakatifu.objects.Chapter;
 import com.ryanada.bibiliatakatifu.objects.Verse;
 
 import java.util.ArrayList;
 
-public class ChaptersAdapter extends BaseAdapter {
+public class AdapterGridviewChapters extends BaseAdapter {
 
-    private final Main2Activity activity;
+    private final ActivityVerses activity;
     private final ArrayList<Chapter> chapters;
-    private final ActivityMain2Binding binding;
-    private final Adapter verseAdapter;
+    private final ActivityVersesBinding binding;
+    private final AdapterRecyclerviewVerses verseAdapter;
 
-    // 1
-    public ChaptersAdapter(Main2Activity activity, ArrayList<Chapter> chapters, ActivityMain2Binding binding, Adapter verseAdapter) {
+    public AdapterGridviewChapters(ActivityVerses activity, ArrayList<Chapter> chapters, ActivityVersesBinding binding, AdapterRecyclerviewVerses verseAdapter) {
         this.activity = activity;
         this.chapters = chapters;
         this.binding = binding;
         this.verseAdapter = verseAdapter;
     }
 
-    // 2
     @Override
     public int getCount() {
         return chapters.size();
     }
 
-    // 3
     @Override
     public long getItemId(int position) {
         return 0;
     }
 
-    // 4
     @Override
     public Object getItem(int position) {
         return null;
     }
 
-    // 5
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -88,7 +83,7 @@ public class ChaptersAdapter extends BaseAdapter {
     private class ViewHolder {
         private final TextView tvChapterNumber;
 
-        public ViewHolder(TextView tvChapterNumber) {
+        ViewHolder(TextView tvChapterNumber) {
             this.tvChapterNumber = tvChapterNumber;
         }
     }

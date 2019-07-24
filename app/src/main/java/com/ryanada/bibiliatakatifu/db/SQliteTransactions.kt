@@ -10,7 +10,7 @@ import com.ryanada.bibiliatakatifu.objects.Verse
 import java.io.IOException
 
 
-public class SqliteTransactions(private val activity: Activity) {
+class SQliteTransactions(private val activity: Activity) {
 
     // Table name
     private val TABLE_BIBLE = "BIBLE_TABLE"
@@ -47,7 +47,7 @@ public class SqliteTransactions(private val activity: Activity) {
             throw sqle
         }
 
-        return db;
+        return db
     }
 
 
@@ -64,11 +64,11 @@ public class SqliteTransactions(private val activity: Activity) {
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
-            val _b = ArrayList<String>()
+            val temp = ArrayList<String>()
             do {
                 // Insert book to arrayList while ignoring duplicates
-                if (!_b.contains(cursor.getString(0))) {
-                    _b.add(cursor.getString(0))
+                if (!temp.contains(cursor.getString(0))) {
+                    temp.add(cursor.getString(0))
 
                     val book = Book()
                     book.book = cursor.getString(0)
@@ -78,6 +78,8 @@ public class SqliteTransactions(private val activity: Activity) {
                 }
             } while (cursor.moveToNext())
 
+            // Clear temporary list to optimize memory
+            temp.clear()
         }
 
         // closing connection
@@ -101,11 +103,11 @@ public class SqliteTransactions(private val activity: Activity) {
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
-            val _b = ArrayList<String>()
+            val temp = ArrayList<String>()
             do {
                 // Insert book to arrayList while ignoring duplicates
-                if (!_b.contains(cursor.getString(0))) {
-                    _b.add(cursor.getString(0))
+                if (!temp.contains(cursor.getString(0))) {
+                    temp.add(cursor.getString(0))
 
                     val chapter = Chapter()
                     chapter.chapter = cursor.getString(0)
@@ -114,6 +116,9 @@ public class SqliteTransactions(private val activity: Activity) {
                     chapters.add(chapter)
                 }
             } while (cursor.moveToNext())
+
+            // Clear temporary list to optimize memory
+            temp.clear()
         }
 
         // closing connection

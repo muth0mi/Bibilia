@@ -12,9 +12,9 @@ import com.google.gson.Gson
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.RowBookBinding
 import com.ryanada.bibiliatakatifu.objects.Book
-import com.ryanada.bibiliatakatifu.verses.Main2Activity
+import com.ryanada.bibiliatakatifu.verses.ActivityVerses
 
-public class RecyclerviewAdapter(val activity: Main3Activity) : RecyclerView.Adapter<RecyclerviewAdapter.BookRow>() {
+public class AdapterRecyclerview(val activityBooks: ActivityBooks) : RecyclerView.Adapter<AdapterRecyclerview.BookRow>() {
 
     private var books: List<Book> = ArrayList()
 
@@ -51,9 +51,9 @@ public class RecyclerviewAdapter(val activity: Main3Activity) : RecyclerView.Ada
             binding.book = book
 
             binding.root.setOnClickListener {
-                val intent = Intent(activity, Main2Activity::class.java)
+                val intent = Intent(activityBooks, ActivityVerses::class.java)
                 intent.putExtra("book", Gson().toJson(book))
-                activity.startActivity(intent)
+                activityBooks.startActivity(intent)
             }
         }
     }

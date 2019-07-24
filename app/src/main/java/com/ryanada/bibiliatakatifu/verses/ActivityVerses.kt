@@ -9,22 +9,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.ryanada.bibiliatakatifu.R
-import com.ryanada.bibiliatakatifu.databinding.ActivityMain2Binding
+import com.ryanada.bibiliatakatifu.databinding.ActivityVersesBinding
 import com.ryanada.bibiliatakatifu.db.SQliteTransactions
 import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.objects.Chapter
 
 
-class Main2Activity : AppCompatActivity() {
+class ActivityVerses : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMain2Binding
+    private lateinit var binding: ActivityVersesBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Bind layout
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_verses)
 
         // Retrieve Book from intent
         val book = Gson().fromJson(intent.getStringExtra("book"), Book::class.java)
@@ -38,7 +38,7 @@ class Main2Activity : AppCompatActivity() {
 //        binding.subtitle = book.nameLong
 
         // Populate recyclerView with bible verses
-        val verseAdapter = Adapter(this)
+        val verseAdapter = AdapterRecyclerviewVerses(this)
         binding.rvVerses.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.rvVerses.adapter = verseAdapter
 
@@ -63,7 +63,7 @@ class Main2Activity : AppCompatActivity() {
             gridView.visibility = View.VISIBLE
 
 
-            val chaptersAdapter = ChaptersAdapter(this, chapters, binding, verseAdapter)
+            val chaptersAdapter = AdapterGridviewChapters(this, chapters, binding, verseAdapter)
             gridView.adapter = chaptersAdapter
 
             // Close search view if open

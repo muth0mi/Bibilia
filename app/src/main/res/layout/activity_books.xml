@@ -22,7 +22,7 @@
 
         <include
             android:id="@+id/include"
-            layout="@layout/activity_main"
+            layout="@layout/activity_books_appbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             bind:title="@{title}" />
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header_main3"
+            app:headerLayout="@layout/nav_header"
             app:menu="@menu/activity_books_drawer" />
 
     </androidx.drawerlayout.widget.DrawerLayout>

@@ -13,7 +13,7 @@ import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.RowVerseBinding
 import com.ryanada.bibiliatakatifu.objects.Verse
 
-public class Adapter(val activity: Main2Activity) : RecyclerView.Adapter<Adapter.VerseRow>() {
+public class AdapterRecyclerviewVerses(val activity: ActivityVerses) : RecyclerView.Adapter<AdapterRecyclerviewVerses.VerseRow>() {
 
     private var verses = ArrayList<Verse>()
 
@@ -47,7 +47,7 @@ public class Adapter(val activity: Main2Activity) : RecyclerView.Adapter<Adapter
             binding.verse = verse
 
             binding.root.setOnClickListener {
-                val intent = Intent(activity, Main2Activity::class.java)
+                val intent = Intent(activity, ActivityVerses::class.java)
                 intent.putExtra("book", Gson().toJson(verse))
 //                activityBooks.startActivity(intent)
             }

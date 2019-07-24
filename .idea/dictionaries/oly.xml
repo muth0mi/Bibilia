@@ -2,6 +2,7 @@
   <dictionary name="oly">
     <words>
       <w>gridview</w>
+      <w>recyclerview</w>
     </words>
   </dictionary>
 </component>

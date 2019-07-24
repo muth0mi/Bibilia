@@ -1,19 +1,27 @@
 [
     {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main2.xml",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main2.xml"
-    },
-    {
-        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_main.xml"
-    },
-    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/row_book.xml",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_book.xml"
     },
     {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_testament.xml",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/fragment_testament.xml"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_books.xml",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_books.xml"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_verses.xml",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_verses.xml"
+    },
+    {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/row_chapter.xml",
         "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/row_chapter.xml"
+    },
+    {
+        "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_books_appbar.xml",
+        "source": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/res/layout/activity_books_appbar.xml"
     },
     {
         "merged": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/row_verse.xml",

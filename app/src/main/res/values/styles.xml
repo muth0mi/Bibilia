@@ -2,13 +2,25 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!--Edge to edge-->
+        <item name="android:statusBarColor" tools:ignore="NewApi">#0fff</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--<item name="android:navigationBarColor">@color/transparent</item>-->
+
+
+        <item name="android:background">#fff</item>
+        <item name="android:typeface">serif</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:statusBarColor" tools:ignore="NewApi">#0fff</item>
+    </style>
 
+    <style name="AppTheme.TabLayoutText" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
 </resources>

@@ -6,8 +6,10 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
-import com.ryanada.bibiliatakatifu.databinding.ActivityMain2BindingImpl;
-import com.ryanada.bibiliatakatifu.databinding.ActivityMainBindingImpl;
+import com.ryanada.bibiliatakatifu.databinding.ActivityBooksAppbarBindingImpl;
+import com.ryanada.bibiliatakatifu.databinding.ActivityBooksBindingImpl;
+import com.ryanada.bibiliatakatifu.databinding.ActivityVersesBindingImpl;
+import com.ryanada.bibiliatakatifu.databinding.FragmentTestamentBindingImpl;
 import com.ryanada.bibiliatakatifu.databinding.RowBookBindingImpl;
 import com.ryanada.bibiliatakatifu.databinding.RowChapterBindingImpl;
 import com.ryanada.bibiliatakatifu.databinding.RowVerseBindingImpl;
@@ -22,21 +24,27 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_ACTIVITYMAIN = 1;
+  private static final int LAYOUT_ACTIVITYBOOKS = 1;
 
-  private static final int LAYOUT_ACTIVITYMAIN2 = 2;
+  private static final int LAYOUT_ACTIVITYBOOKSAPPBAR = 2;
 
-  private static final int LAYOUT_ROWBOOK = 3;
+  private static final int LAYOUT_ACTIVITYVERSES = 3;
 
-  private static final int LAYOUT_ROWCHAPTER = 4;
+  private static final int LAYOUT_FRAGMENTTESTAMENT = 4;
 
-  private static final int LAYOUT_ROWVERSE = 5;
+  private static final int LAYOUT_ROWBOOK = 5;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
+  private static final int LAYOUT_ROWCHAPTER = 6;
+
+  private static final int LAYOUT_ROWVERSE = 7;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
 
   static {
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.activity_main2, LAYOUT_ACTIVITYMAIN2);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.activity_books, LAYOUT_ACTIVITYBOOKS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.activity_books_appbar, LAYOUT_ACTIVITYBOOKSAPPBAR);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.activity_verses, LAYOUT_ACTIVITYVERSES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.fragment_testament, LAYOUT_FRAGMENTTESTAMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.row_book, LAYOUT_ROWBOOK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.row_chapter, LAYOUT_ROWCHAPTER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ryanada.bibiliatakatifu.R.layout.row_verse, LAYOUT_ROWVERSE);
@@ -51,17 +59,29 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
-        case  LAYOUT_ACTIVITYMAIN: {
-          if ("layout/activity_main_0".equals(tag)) {
-            return new ActivityMainBindingImpl(component, view);
+        case  LAYOUT_ACTIVITYBOOKS: {
+          if ("layout/activity_books_0".equals(tag)) {
+            return new ActivityBooksBindingImpl(component, view);
           }
-          throw new IllegalArgumentException("The tag for activity_main is invalid. Received: " + tag);
+          throw new IllegalArgumentException("The tag for activity_books is invalid. Received: " + tag);
         }
-        case  LAYOUT_ACTIVITYMAIN2: {
-          if ("layout/activity_main2_0".equals(tag)) {
-            return new ActivityMain2BindingImpl(component, view);
+        case  LAYOUT_ACTIVITYBOOKSAPPBAR: {
+          if ("layout/activity_books_appbar_0".equals(tag)) {
+            return new ActivityBooksAppbarBindingImpl(component, view);
           }
-          throw new IllegalArgumentException("The tag for activity_main2 is invalid. Received: " + tag);
+          throw new IllegalArgumentException("The tag for activity_books_appbar is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYVERSES: {
+          if ("layout/activity_verses_0".equals(tag)) {
+            return new ActivityVersesBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_verses is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTTESTAMENT: {
+          if ("layout/fragment_testament_0".equals(tag)) {
+            return new FragmentTestamentBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_testament is invalid. Received: " + tag);
         }
         case  LAYOUT_ROWBOOK: {
           if ("layout/row_book_0".equals(tag)) {
@@ -139,11 +159,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
 
     static {
-      sKeys.put("layout/activity_main_0", com.ryanada.bibiliatakatifu.R.layout.activity_main);
-      sKeys.put("layout/activity_main2_0", com.ryanada.bibiliatakatifu.R.layout.activity_main2);
+      sKeys.put("layout/activity_books_0", com.ryanada.bibiliatakatifu.R.layout.activity_books);
+      sKeys.put("layout/activity_books_appbar_0", com.ryanada.bibiliatakatifu.R.layout.activity_books_appbar);
+      sKeys.put("layout/activity_verses_0", com.ryanada.bibiliatakatifu.R.layout.activity_verses);
+      sKeys.put("layout/fragment_testament_0", com.ryanada.bibiliatakatifu.R.layout.fragment_testament);
       sKeys.put("layout/row_book_0", com.ryanada.bibiliatakatifu.R.layout.row_book);
       sKeys.put("layout/row_chapter_0", com.ryanada.bibiliatakatifu.R.layout.row_chapter);
       sKeys.put("layout/row_verse_0", com.ryanada.bibiliatakatifu.R.layout.row_verse);

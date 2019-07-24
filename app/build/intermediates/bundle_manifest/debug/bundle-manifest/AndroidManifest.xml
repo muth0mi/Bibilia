@@ -21,15 +21,18 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ryanada.bibiliatakatifu.verses.Main2Activity"
-            android:parentActivityName="com.ryanada.bibiliatakatifu.books.MainActivity" />
-        <activity android:name="com.ryanada.bibiliatakatifu.books.MainActivity" >
+            android:name="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.ryanada.bibiliatakatifu.verses.ActivityVerses"
+            android:parentActivityName="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+            android:theme="@style/AppTheme" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"

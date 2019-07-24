@@ -2,36 +2,29 @@ package com.ryanada.bibiliatakatifu.books
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.ryanada.bibiliatakatifu.R
-import com.ryanada.bibiliatakatifu.databinding.ActivityMain3Binding
-import com.ryanada.bibiliatakatifu.db.SqliteTransactions
-import kotlinx.android.synthetic.main.activity_main.view.*
+import com.ryanada.bibiliatakatifu.databinding.ActivityBooksBinding
+import kotlinx.android.synthetic.main.activity_books_appbar.view.*
 
-class Main3Activity : AppCompatActivity() {
+class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var binding: ActivityMain3Binding
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityBooksBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Bind layout
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main3)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_books)
 
         // Set Page Title
         binding.title = "Books"
@@ -49,27 +42,38 @@ class Main3Activity : AppCompatActivity() {
 
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
+
+        // Setup Navigation Drawer toggle
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        // Setup navigation navigation views
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.navHostFragment)
-        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        navView.setNavigationItemSelectedListener(this)
+
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main3, menu)
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Side Navigation View handler
+        when (item.itemId) {
+            R.id.nav_home -> {
+            }
+            R.id.nav_gallery -> {
+            }
+            else -> {
+            }
+        }
+
+        // Close nav drawer
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.navHostFragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu to action bar
+        menuInflater.inflate(R.menu.activity_books_menu, menu)
+        return true
     }
 }

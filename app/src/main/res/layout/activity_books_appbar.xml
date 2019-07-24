@@ -23,35 +23,22 @@
             android:background="#fff"
             app:liftOnScroll="true">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="none"
+                app:title="@{title}" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?actionBarSize"
-                    app:title="@{title}" />
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#fff"
-                app:tabGravity="center">
-                app:tabTextAppearance="@style/AppTheme.TabLayoutText" >
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Old Testament" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Testament" />
+                app:tabGravity="center"
+                app:tabTextAppearance="@style/AppTheme.TabLayoutText">
 
             </com.google.android.material.tabs.TabLayout>
 
