@@ -89,6 +89,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="#0fff"
+                            app:iconifiedByDefault="true"
                             app:queryHint="Search in this chapter" />
                     </LinearLayout>
 
@@ -98,7 +99,9 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <GridLayout
-                android:id="@+id/gl"
+                android:id="@+id/gridLayout"
+                android:visibility="gone"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:columnCount="6" />
@@ -116,19 +119,7 @@
                 android:orientation="vertical"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-                <GridView
-                    android:id="@+id/gridview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"
-                    android:columnWidth="64dp"
-                    android:elevation="1dp"
-                    android:nestedScrollingEnabled="true"
-                    android:numColumns="auto_fit"
-                    android:stretchMode="spacingWidthUniform"
-                    android:visibility="gone"
-                    tools:ignore="UnusedAttribute" />
+
 
                 <TextView
                     android:id="@+id/tvNoResults"

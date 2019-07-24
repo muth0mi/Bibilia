@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,9 +24,6 @@ public abstract class ActivityBooksBinding extends ViewDataBinding {
   @NonNull
   public final NavigationView navView;
 
-  @Bindable
-  protected String mTitle;
-
   protected ActivityBooksBinding(Object _bindingComponent, View _root, int _localFieldCount,
       DrawerLayout drawerLayout, ActivityBooksAppbarBinding include, NavigationView navView) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -35,13 +31,6 @@ public abstract class ActivityBooksBinding extends ViewDataBinding {
     this.include = include;
     setContainedBinding(this.include);
     this.navView = navView;
-  }
-
-  public abstract void setTitle(@Nullable String title);
-
-  @Nullable
-  public String getTitle() {
-    return mTitle;
   }
 
   @NonNull

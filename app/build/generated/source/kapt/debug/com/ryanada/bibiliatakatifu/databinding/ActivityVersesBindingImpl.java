@@ -19,7 +19,7 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
         sViewsWithIds.put(R.id.tvChapter, 4);
         sViewsWithIds.put(R.id.btnNext, 5);
         sViewsWithIds.put(R.id.svSearch, 6);
-        sViewsWithIds.put(R.id.gridview, 7);
+        sViewsWithIds.put(R.id.gridLayout, 7);
         sViewsWithIds.put(R.id.tvNoResults, 8);
         sViewsWithIds.put(R.id.rvVerses, 9);
     }
@@ -38,7 +38,7 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
         super(bindingComponent, root, 0
             , (android.widget.ImageButton) bindings[5]
             , (android.widget.ImageButton) bindings[3]
-            , (android.widget.GridView) bindings[7]
+            , (android.widget.GridLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[9]
             , (androidx.appcompat.widget.SearchView) bindings[6]

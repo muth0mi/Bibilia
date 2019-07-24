@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.ryanada.bibiliatakatifu.R
 
 
 // Returns a fragment corresponding to one of the tabs/pages
@@ -18,8 +19,8 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
     // Tab names
     override fun getPageTitle(position: Int): CharSequence? {
         val tabs = arrayOf(
-            "Old Testament",
-            "New Testament"
+            context.getString(R.string.oldTestament),
+            context.getString(R.string.newTestament)
         )
         return tabs[position]
     }

@@ -44,7 +44,7 @@ public class ActivityBooksBindingImpl extends ActivityBooksBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x2L;
         }
         include.invalidateAll();
         requestRebind();
@@ -66,22 +66,7 @@ public class ActivityBooksBindingImpl extends ActivityBooksBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.title == variableId) {
-            setTitle((java.lang.String) variable);
-        }
-        else {
-            variableSet = false;
-        }
             return variableSet;
-    }
-
-    public void setTitle(@Nullable java.lang.String Title) {
-        this.mTitle = Title;
-        synchronized(this) {
-            mDirtyFlags |= 0x2L;
-        }
-        notifyPropertyChanged(BR.title);
-        super.requestRebind();
     }
 
     @Override
@@ -115,16 +100,7 @@ public class ActivityBooksBindingImpl extends ActivityBooksBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String title = mTitle;
-
-        if ((dirtyFlags & 0x6L) != 0) {
-        }
         // batch finished
-        if ((dirtyFlags & 0x6L) != 0) {
-            // api target 1
-
-            this.include.setTitle(title);
-        }
         executeBindingsOn(include);
     }
     // Listener Stub Implementations
@@ -133,8 +109,7 @@ public class ActivityBooksBindingImpl extends ActivityBooksBinding  {
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
         flag 0 (0x1L): include
-        flag 1 (0x2L): title
-        flag 2 (0x3L): null
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

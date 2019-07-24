@@ -6,10 +6,6 @@
 
     <data>
 
-        <variable
-            name="title"
-            type="String" />
-
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -22,19 +18,55 @@
             app:liftOnScroll="false">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
-                app:title="Books"
                 android:id="@+id/collapsingToolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|snap|enterAlways"
+                app:title="Books"
                 app:toolbarId="@+id/toolBar">
 
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/toolBar"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/AppTheme.ToolBar"
                     android:layout_width="match_parent"
-                    android:layout_height="?actionBarSize"
-                    app:layout_collapseMode="none"
-                    app:title="@{title}" />
+                    android:layout_height="?actionBarSize">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/toolBar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintEnd_toStartOf="@id/ll"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:title="Books" />
+
+                    <LinearLayout
+                        android:id="@+id/ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|end"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/svSearch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#0fff"
+                            app:iconifiedByDefault="true"
+                            app:queryHint="Search book" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <!-- <com.google.android.material.appbar.MaterialToolbar
+                     android:id="@+id/toolBar"
+                     android:layout_width="match_parent"
+                     android:layout_height="?actionBarSize"
+                     app:layout_collapseMode="none"
+                     app:title="@{title}" />-->
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 

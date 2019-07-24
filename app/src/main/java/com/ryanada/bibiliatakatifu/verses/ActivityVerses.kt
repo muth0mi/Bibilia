@@ -1,7 +1,9 @@
 package com.ryanada.bibiliatakatifu.verses
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -50,7 +52,7 @@ class ActivityVerses : AppCompatActivity() {
             object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
-                    binding.gridview.visibility = View.GONE
+                    binding.gridLayout.visibility = View.GONE
                 }
 
             })
@@ -60,13 +62,36 @@ class ActivityVerses : AppCompatActivity() {
         val chapters = SQliteTransactions(this).getChapters(book)
         binding.tvChapter.text = "1"
 
+        // Grid layout
+        for (chapter in chapters) {
+            val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val row = inflater.inflate(R.layout.row_chapter, null)
+            val tvChapterNumber = row.findViewById<TextView>(R.id.tvChapterNumber)
+
+            tvChapterNumber.text = chapter.chapter
+            binding.gridLayout.addView(row)
+
+            // Highlight current chapter
+            tvChapterNumber.background = resources.getDrawable(R.drawable.background_chapter_number)
+            if (tvChapterNumber.equals(binding.tvChapter.text.toString()))
+                tvChapterNumber.background = resources.getDrawable(R.drawable.background_chapter_number_current)
+
+            // Handler for chapter number click
+            tvChapterNumber.setOnClickListener { view ->
+                //Show verses in selected chapter
+                val verses = SQliteTransactions(this).getVerses(chapter)
+                verseAdapter.setVerses(verses)
+
+                // Set label and close panel
+                binding.tvChapter.text = (view as TextView).text
+                binding.gridLayout.visibility = View.GONE
+            }
+        }
+
         // Handle tvChapter click
         binding.tvChapter.setOnClickListener {
-            val gridView = binding.gridview
-            gridView.visibility = View.VISIBLE
-
-            val chaptersAdapter = AdapterGridviewChapters(this, chapters, binding, verseAdapter)
-            gridView.adapter = chaptersAdapter
+            val gridLayout = binding.gridLayout
+            gridLayout.visibility = View.VISIBLE
 
             // Close search view if open
             binding.svSearch.isIconified = true
@@ -90,7 +115,7 @@ class ActivityVerses : AppCompatActivity() {
             } catch (_: Exception) {
                 Toast.makeText(this, "This is the last chapter of " + book.book, Toast.LENGTH_SHORT).show()
             }
-            binding.gridview.visibility = View.GONE
+            binding.gridLayout.visibility = View.GONE
         }
 
 
@@ -109,13 +134,13 @@ class ActivityVerses : AppCompatActivity() {
             } catch (_: Exception) {
                 Toast.makeText(this, "This is the first chapter of " + book.book, Toast.LENGTH_SHORT).show()
             }
-            binding.gridview.visibility = View.GONE
+            binding.gridLayout.visibility = View.GONE
         }
 
 
         // Search
         binding.svSearch.setOnSearchClickListener {
-            binding.gridview.visibility = View.GONE
+            binding.gridLayout.visibility = View.GONE
         }
         binding.svSearch.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {

@@ -3,8 +3,10 @@ package com.ryanada.bibiliatakatifu.books
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
@@ -15,11 +17,13 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.ActivityBooksBinding
+import com.ryanada.bibiliatakatifu.objects.Book
+import com.ryanada.bibiliatakatifu.objects.Verse
 import kotlinx.android.synthetic.main.activity_books_appbar.view.*
 
 class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var binding: ActivityBooksBinding
+     lateinit var binding: ActivityBooksBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +31,8 @@ class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         // Bind layout
         binding = DataBindingUtil.setContentView(this, R.layout.activity_books)
 
-        // Set Page Title
-        binding.title = "Books"
-
         val toolbar: MaterialToolbar = binding.include.toolBar
         setSupportActionBar(toolbar)
-        supportActionBar?.setTitle("Books")
 
         // Tab layout
         val tabLayout: TabLayout = binding.include.tabLayout
@@ -54,7 +54,6 @@ class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val navView: NavigationView = binding.navView
         navView.setNavigationItemSelectedListener(this)
 
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -73,9 +72,4 @@ class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         return true
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu to action bar
-        menuInflater.inflate(R.menu.activity_books_menu, menu)
-        return true
-    }
 }

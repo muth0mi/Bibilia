@@ -4,7 +4,7 @@ package com.ryanada.bibiliatakatifu.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,7 +28,7 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
   public final ImageButton btnPrev;
 
   @NonNull
-  public final GridView gridview;
+  public final GridLayout gridLayout;
 
   @NonNull
   public final LinearLayout ll;
@@ -55,13 +55,13 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
   protected String mSubtitle;
 
   protected ActivityVersesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageButton btnNext, ImageButton btnPrev, GridView gridview, LinearLayout ll,
+      ImageButton btnNext, ImageButton btnPrev, GridLayout gridLayout, LinearLayout ll,
       RecyclerView rvVerses, SearchView svSearch, Toolbar toolBar, TextView tvChapter,
       TextView tvNoResults) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnNext = btnNext;
     this.btnPrev = btnPrev;
-    this.gridview = gridview;
+    this.gridLayout = gridLayout;
     this.ll = ll;
     this.rvVerses = rvVerses;
     this.svSearch = svSearch;

@@ -14,9 +14,12 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.collapsingToolbarLayout, 2);
-        sViewsWithIds.put(R.id.tabLayout, 3);
-        sViewsWithIds.put(R.id.viewPager, 4);
+        sViewsWithIds.put(R.id.collapsingToolbarLayout, 1);
+        sViewsWithIds.put(R.id.toolBar, 2);
+        sViewsWithIds.put(R.id.ll, 3);
+        sViewsWithIds.put(R.id.svSearch, 4);
+        sViewsWithIds.put(R.id.tabLayout, 5);
+        sViewsWithIds.put(R.id.viewPager, 6);
     }
     // views
     @NonNull
@@ -27,18 +30,19 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     // Inverse Binding Event Handlers
 
     public ActivityBooksAppbarBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private ActivityBooksAppbarBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[2]
-            , (com.google.android.material.tabs.TabLayout) bindings[3]
-            , (com.google.android.material.appbar.MaterialToolbar) bindings[1]
-            , (androidx.viewpager.widget.ViewPager) bindings[4]
+            , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[1]
+            , (android.widget.LinearLayout) bindings[3]
+            , (androidx.appcompat.widget.SearchView) bindings[4]
+            , (com.google.android.material.tabs.TabLayout) bindings[5]
+            , (com.google.android.material.appbar.MaterialToolbar) bindings[2]
+            , (androidx.viewpager.widget.ViewPager) bindings[6]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.toolBar.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -47,7 +51,7 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x2L;
+                mDirtyFlags = 0x1L;
         }
         requestRebind();
     }
@@ -65,22 +69,7 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.title == variableId) {
-            setTitle((java.lang.String) variable);
-        }
-        else {
-            variableSet = false;
-        }
             return variableSet;
-    }
-
-    public void setTitle(@Nullable java.lang.String Title) {
-        this.mTitle = Title;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.title);
-        super.requestRebind();
     }
 
     @Override
@@ -97,24 +86,14 @@ public class ActivityBooksAppbarBindingImpl extends ActivityBooksAppbarBinding  
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String title = mTitle;
-
-        if ((dirtyFlags & 0x3L) != 0) {
-        }
         // batch finished
-        if ((dirtyFlags & 0x3L) != 0) {
-            // api target 1
-
-            this.toolBar.setTitle(title);
-        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): title
-        flag 1 (0x2L): null
+        flag 0 (0x1L): null
     flag mapping end*/
     //end
 }

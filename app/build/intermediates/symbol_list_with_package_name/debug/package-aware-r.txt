@@ -818,6 +818,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1309,6 +1310,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable folded_bible
 drawable ic_baseline_navigate_before_24px
 drawable ic_baseline_navigate_next_24px
 drawable ic_baseline_search_24px
@@ -1328,6 +1330,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable logo
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1485,7 +1488,7 @@ id fixed
 id forever
 id ghost_view
 id gone
-id gridview
+id gridLayout
 id group_divider
 id groups
 id hideable
@@ -1495,7 +1498,6 @@ id icon
 id icon_group
 id ifRoom
 id image
-id imageView
 id include
 id info
 id invisible
@@ -1534,7 +1536,6 @@ id nav_home
 id nav_send
 id nav_share
 id nav_slideshow
-id nav_tools
 id nav_view
 id navigation_header_container
 id never
@@ -1630,7 +1631,6 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
 id textWatcher
 id text_input_end_icon
 id text_input_start_icon
@@ -1792,6 +1792,7 @@ layout test_toolbar_surface
 menu activity_books_drawer
 menu activity_books_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
@@ -1860,6 +1861,8 @@ string nav_header_subtitle
 string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
+string newTestament
+string oldTestament
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
