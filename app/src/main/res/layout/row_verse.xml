@@ -18,6 +18,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="6dp"
+        app:cardBackgroundColor="@color/colorBackground"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +29,8 @@
                 android:id="@+id/tvVerseNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@{ verse.verseNumber}'
+                android:text='@{verse.verseNumber}'
+                android:hint="1"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

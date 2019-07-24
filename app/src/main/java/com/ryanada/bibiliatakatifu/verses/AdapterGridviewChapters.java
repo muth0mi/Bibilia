@@ -60,6 +60,7 @@ public class AdapterGridviewChapters extends BaseAdapter {
         viewHolder.tvChapterNumber.setText(chapters.get(position).getChapter());
 
         // Highlight current chapter
+        viewHolder.tvChapterNumber.setBackground(activity.getResources().getDrawable(R.drawable.background_chapter_number));
         if (position == Integer.valueOf(binding.tvChapter.getText().toString()) - 1)
             viewHolder.tvChapterNumber.setBackground(activity.getResources().getDrawable(R.drawable.background_chapter_number_current));
 

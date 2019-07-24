@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -15,17 +16,16 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.button.MaterialButton;
 import com.ryanada.bibiliatakatifu.R;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityVersesBinding extends ViewDataBinding {
   @NonNull
-  public final MaterialButton btnNext;
+  public final ImageButton btnNext;
 
   @NonNull
-  public final MaterialButton btnPrev;
+  public final ImageButton btnPrev;
 
   @NonNull
   public final GridView gridview;
@@ -55,7 +55,7 @@ public abstract class ActivityVersesBinding extends ViewDataBinding {
   protected String mSubtitle;
 
   protected ActivityVersesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      MaterialButton btnNext, MaterialButton btnPrev, GridView gridview, LinearLayout ll,
+      ImageButton btnNext, ImageButton btnPrev, GridView gridview, LinearLayout ll,
       RecyclerView rvVerses, SearchView svSearch, Toolbar toolBar, TextView tvChapter,
       TextView tvNoResults) {
     super(_bindingComponent, _root, _localFieldCount);

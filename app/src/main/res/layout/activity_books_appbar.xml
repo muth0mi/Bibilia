@@ -19,7 +19,6 @@
 
         <com.google.android.material.appbar.AppBarLayout
             style="@style/AppTheme.ToolBar"
-            android:background="@color/colorToolbar"
             app:liftOnScroll="false">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout

@@ -15,13 +15,13 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.ll, 2);
-        sViewsWithIds.put(R.id.tvChapter, 3);
-        sViewsWithIds.put(R.id.svSearch, 4);
-        sViewsWithIds.put(R.id.gridview, 5);
-        sViewsWithIds.put(R.id.tvNoResults, 6);
-        sViewsWithIds.put(R.id.rvVerses, 7);
-        sViewsWithIds.put(R.id.btnPrev, 8);
-        sViewsWithIds.put(R.id.btnNext, 9);
+        sViewsWithIds.put(R.id.btnPrev, 3);
+        sViewsWithIds.put(R.id.tvChapter, 4);
+        sViewsWithIds.put(R.id.btnNext, 5);
+        sViewsWithIds.put(R.id.svSearch, 6);
+        sViewsWithIds.put(R.id.gridview, 7);
+        sViewsWithIds.put(R.id.tvNoResults, 8);
+        sViewsWithIds.put(R.id.rvVerses, 9);
     }
     // views
     @NonNull
@@ -36,15 +36,15 @@ public class ActivityVersesBindingImpl extends ActivityVersesBinding  {
     }
     private ActivityVersesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.button.MaterialButton) bindings[9]
-            , (com.google.android.material.button.MaterialButton) bindings[8]
-            , (android.widget.GridView) bindings[5]
+            , (android.widget.ImageButton) bindings[5]
+            , (android.widget.ImageButton) bindings[3]
+            , (android.widget.GridView) bindings[7]
             , (android.widget.LinearLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
-            , (androidx.appcompat.widget.SearchView) bindings[4]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
+            , (androidx.appcompat.widget.SearchView) bindings[6]
             , (androidx.appcompat.widget.Toolbar) bindings[1]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[8]
             );
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
