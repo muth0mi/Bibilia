@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                   
+
+    
+
+                 
+                        
+                            
+
+                 
+                           
+                            
+
+           
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".chapters.MainActivity" android:tag="layout/activity_verses_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <com.google.android.material.appbar.AppBarLayout
+            style="@style/AppTheme.ToolBar"
+            app:liftOnScroll="false">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/AppTheme.ToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolBar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintEnd_toStartOf="@id/ll"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:tag="binding_1"   
+                        app:theme="@style/ToolbarTheme"
+                                            
+                        app:titleTextColor="@color/colorSurface" />
+
+                    <LinearLayout
+                        android:id="@+id/ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|end"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                        <ImageButton
+                            android:id="@+id/btnPrev"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#0fff"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:src="@drawable/ic_baseline_navigate_before_24px"
+                            android:tint="@color/colorSurface" />
+
+                        <TextView
+                            android:id="@+id/tvChapter"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/background_chapter_number"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/colorSurface"
+                            android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/btnNext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#0fff"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:src="@drawable/ic_baseline_navigate_next_24px"
+                            android:tint="@color/colorSurface" />
+
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/svSearch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#0fff"
+                            android:foregroundTint="@color/colorSurface"
+                            app:iconifiedByDefault="true"
+                            app:queryHint="@string/searchInChapter" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.circularreveal.CircularRevealGridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="6"
+                android:visibility="gone" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+                <TextView
+                    android:id="@+id/tvNoResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:gravity="center"
+                    android:text="No results"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvVerses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="vertical"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+         

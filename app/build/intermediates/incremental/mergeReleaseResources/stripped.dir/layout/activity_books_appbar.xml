@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                   
+
+    
+
+           
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".chapters.MainActivity" android:tag="layout/activity_books_appbar_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <com.google.android.material.appbar.AppBarLayout
+            style="@style/AppTheme.ToolBar"
+            app:liftOnScroll="false">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|snap|enterAlways"
+                app:toolbarId="@+id/toolBar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/AppTheme.ToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/toolBar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintEnd_toStartOf="@id/svSearch"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:theme="@style/ToolbarTheme"
+                        app:titleTextColor="@color/colorSurface">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@string/books"
+                            android:textAppearance="?attr/titleTextAppearance"
+                            android:textColor="@color/colorSurface"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.appbar.MaterialToolbar>
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/svSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#0fff"
+                        android:gravity="center|end"
+                        app:iconifiedByDefault="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:queryHint="@string/searchBook" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0000"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorSurface"
+                app:tabSelectedTextColor="@color/colorSurface"
+                app:tabTextAppearance="@style/AppTheme.TabLayoutText"
+                app:tabTextColor="@color/colorSurfaceLight" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+         
