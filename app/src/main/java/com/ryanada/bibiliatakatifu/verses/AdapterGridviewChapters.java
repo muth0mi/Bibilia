@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.ryanada.bibiliatakatifu.R;
 import com.ryanada.bibiliatakatifu.databinding.ActivityMain2Binding;
-import com.ryanada.bibiliatakatifu.db.SqliteTransactions;
+import com.ryanada.bibiliatakatifu.db.SQliteTransactions;
 import com.ryanada.bibiliatakatifu.objects.Chapter;
 import com.ryanada.bibiliatakatifu.objects.Verse;
 
@@ -72,7 +72,7 @@ public class ChaptersAdapter extends BaseAdapter {
         // Handler for chapter number click
         viewHolder.tvChapterNumber.setOnClickListener(view -> {
                     //Show verses in selected chapter
-                    ArrayList<Verse> verses = new SqliteTransactions(activity).getVerses(chapters.get(position));
+                    ArrayList<Verse> verses = new SQliteTransactions(activity).getVerses(chapters.get(position));
                     verseAdapter.setVerses(verses);
 
                     // Set label and close panel

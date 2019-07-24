@@ -14,7 +14,7 @@ import com.ryanada.bibiliatakatifu.databinding.RowBookBinding
 import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.verses.Main2Activity
 
-public class Adapter(val activity: MainActivity) : RecyclerView.Adapter<Adapter.BookRow>() {
+public class RecyclerviewAdapter(val activity: Main3Activity) : RecyclerView.Adapter<RecyclerviewAdapter.BookRow>() {
 
     private var books: List<Book> = ArrayList()
 

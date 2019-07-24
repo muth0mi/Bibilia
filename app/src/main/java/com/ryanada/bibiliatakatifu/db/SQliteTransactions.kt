@@ -5,11 +5,12 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.objects.Chapter
+import com.ryanada.bibiliatakatifu.objects.Testament
 import com.ryanada.bibiliatakatifu.objects.Verse
 import java.io.IOException
 
 
-public class SqliteTransactions(val activity: Activity) {
+public class SqliteTransactions(private val activity: Activity) {
 
     // Table name
     private val TABLE_BIBLE = "BIBLE_TABLE"
@@ -51,13 +52,12 @@ public class SqliteTransactions(val activity: Activity) {
 
 
     // Get books from db
-    fun getBooks(): ArrayList<Book> {
+    fun getBooks(testament: Testament): ArrayList<Book> {
         // ArrayList to hold books
         val books = ArrayList<Book>()
 
         // Select All Query
-        val query = "SELECT $KEY_BOOKS, $KEY_GENERATION, $KEY_ID FROM $TABLE_BIBLE"
-//        val query = "SELECT $KEY_BOOKS FROM $TABLE_BIBLE"
+        val query = "SELECT $KEY_BOOKS, $KEY_GENERATION, $KEY_ID FROM $TABLE_BIBLE WHERE $KEY_GENERATION = '" + testament.testament + "'"
 
         val db = getDatabase()
         val cursor = db.rawQuery(query, null)
@@ -151,5 +151,4 @@ public class SqliteTransactions(val activity: Activity) {
 
         return verses
     }
-
 }

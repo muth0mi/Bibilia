@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.ActivityMain2Binding
-import com.ryanada.bibiliatakatifu.db.SqliteTransactions
+import com.ryanada.bibiliatakatifu.db.SQliteTransactions
 import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.objects.Chapter
 
@@ -54,10 +54,10 @@ class Main2Activity : AppCompatActivity() {
 
 
         // Get chapters
-        val chapters = SqliteTransactions(this).getChapters(book)
-
-        // show chapters
+        val chapters = SQliteTransactions(this).getChapters(book)
         binding.tvChapter.text = "1"
+
+        // Handle tvChapter click
         binding.tvChapter.setOnClickListener {
             val gridView = binding.gridview
             gridView.visibility = View.VISIBLE
@@ -66,7 +66,9 @@ class Main2Activity : AppCompatActivity() {
             val chaptersAdapter = ChaptersAdapter(this, chapters, binding, verseAdapter)
             gridView.adapter = chaptersAdapter
 
-            // Close serach view if open
+            // Close search view if open
+            binding.svSearch.isIconified = true
+            // In case searchView had a query
             binding.svSearch.isIconified = true
         }
 
@@ -77,7 +79,7 @@ class Main2Activity : AppCompatActivity() {
 
             try {
                 // Show chapter verses
-                val verses = SqliteTransactions(this).getVerses(chapters[nextIndex])
+                val verses = SQliteTransactions(this).getVerses(chapters[nextIndex])
                 verseAdapter.setVerses(verses)
 
                 // Update displayed chapter
@@ -96,7 +98,7 @@ class Main2Activity : AppCompatActivity() {
 
             try {
                 // Show chapter verses
-                val verses = SqliteTransactions(this).getVerses(chapters[previousIndex])
+                val verses = SQliteTransactions(this).getVerses(chapters[previousIndex])
                 verseAdapter.setVerses(verses)
 
                 // Update displayed chapter
@@ -119,7 +121,7 @@ class Main2Activity : AppCompatActivity() {
         val chapter = Chapter()
         chapter.chapter = "1"
         chapter.book = book.book
-        val verses = SqliteTransactions(this).getVerses(chapter)
+        val verses = SQliteTransactions(this).getVerses(chapter)
         verseAdapter.setVerses(verses)
     }
 

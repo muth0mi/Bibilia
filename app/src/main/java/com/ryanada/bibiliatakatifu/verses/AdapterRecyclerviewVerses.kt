@@ -49,7 +49,7 @@ public class Adapter(val activity: Main2Activity) : RecyclerView.Adapter<Adapter
             binding.root.setOnClickListener {
                 val intent = Intent(activity, Main2Activity::class.java)
                 intent.putExtra("book", Gson().toJson(verse))
-//                activity.startActivity(intent)
+//                activityBooks.startActivity(intent)
             }
         }
     }
