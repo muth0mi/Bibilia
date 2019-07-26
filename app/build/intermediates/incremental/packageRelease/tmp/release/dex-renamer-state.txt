@@ -1,4 +1,0 @@
-#Wed Jul 24 21:50:48 EAT 2019
-base.0=/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/dex/release/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
