@@ -36,6 +36,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (!dbExist) {
             // Create empty database in the default system path
             this.getReadableDatabase();
+            this.close();
+
+//  todo          openDataBase().close();
 
             // Overwrite database with our database
             try {
@@ -48,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Check if the database already exist to avoid overwriting each time app is launched
     private boolean checkDataBase() {
-        SQLiteDatabase checkDB = null;
+        SQLiteDatabase checkDB;
 
         try {
             checkDB = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READONLY);

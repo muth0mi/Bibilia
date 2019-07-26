@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.FragmentTestamentBinding
 import com.ryanada.bibiliatakatifu.db.SQliteTransactions
-import com.ryanada.bibiliatakatifu.objects.Book
 import com.ryanada.bibiliatakatifu.objects.Testament
 import kotlinx.android.synthetic.main.activity_books_appbar.view.*
 
@@ -37,12 +36,6 @@ class FragmentTestamentOld : Fragment() {
         testament.testament = "OLD"
         val books = SQliteTransactions(activity).getBooks(testament)
         booksAdapter.setBooks(books)
-        activity.books = books
-
-        // Search
-        activity.binding.include.svSearch.setOnQueryTextListener(
-            activity.bookSearcher
-        )
 
         return binding.root
     }

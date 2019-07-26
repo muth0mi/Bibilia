@@ -16,14 +16,15 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.ryanada.bibiliatakatifu.R
 import com.ryanada.bibiliatakatifu.databinding.ActivityBooksBinding
+import com.ryanada.bibiliatakatifu.db.SQliteTransactions
 import com.ryanada.bibiliatakatifu.objects.Book
+import com.ryanada.bibiliatakatifu.objects.Testament
 import kotlinx.android.synthetic.main.activity_books_appbar.view.*
 
 class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var binding: ActivityBooksBinding
     lateinit var booksAdapter: AdapterRecyclerview
-    var books = ArrayList<Book>();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +80,11 @@ class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         override fun onQueryTextChange(newText: String): Boolean {
             // Search query
+            var testament = Testament()
+            testament.testament = if (binding.include.viewPager.currentItem == 0) "OLD"
+            else "NEW"
+
+            var books = SQliteTransactions(this@ActivityBooks).getBooks(testament)
             val results = ArrayList<Book>()
 
             for (book in books) {
