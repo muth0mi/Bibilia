@@ -1,4 +1,4 @@
-#Fri Jul 26 11:29:18 EAT 2019
-base.0=/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/dex/release/out/classes.dex
+#Sun Apr 26 01:17:29 EAT 2020
+base.0=/home/oly/Workspace/Personal/Android/Bibilia/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

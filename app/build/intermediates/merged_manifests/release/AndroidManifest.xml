@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+            android:name="io.muth0mi.bibilia.books.ActivityBooks"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,8 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ryanada.bibiliatakatifu.verses.ActivityVerses"
-            android:parentActivityName="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+            android:name="io.muth0mi.bibilia.verses.ActivityVerses"
+            android:parentActivityName="io.muth0mi.bibilia.books.ActivityBooks"
             android:theme="@style/AppTheme" />
 
         <provider

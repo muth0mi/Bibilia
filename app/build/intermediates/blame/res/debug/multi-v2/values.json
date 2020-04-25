@@ -368,11 +368,11 @@
                 {
                     "source": "/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "3,6,2,7,8,9",
+                        "startLines": "3,5,2,6,7,8",
                         "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "102,150,55,197,241,290",
+                        "startOffsets": "102,149,55,196,240,289",
                         "endColumns": "45,46,46,43,48,46",
-                        "endOffsets": "143,192,97,236,285,332"
+                        "endOffsets": "143,191,97,235,284,331"
                     },
                     "to": {
                         "startLines": "226,227,228,229,230,231",

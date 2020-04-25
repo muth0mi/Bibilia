@@ -1,13 +1,13 @@
-package com.ryanada.bibilia.db
+package io.muth0mi.bibilia.db
 
 import android.app.Activity
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
-import com.ryanada.bibilia.objects.Book
-import com.ryanada.bibilia.objects.Chapter
-import com.ryanada.bibilia.objects.Testament
-import com.ryanada.bibilia.objects.Verse
+import io.muth0mi.bibilia.objects.Book
+import io.muth0mi.bibilia.objects.Chapter
+import io.muth0mi.bibilia.objects.Testament
+import io.muth0mi.bibilia.objects.Verse
 import java.io.IOException
 
 

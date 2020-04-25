@@ -34,7 +34,7 @@
 22-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:13:9-40
 23        <activity
 23-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:16:9-24:20
-24            android:name="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+24            android:name="io.muth0mi.bibilia.books.ActivityBooks"
 24-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:17:13-48
 25            android:theme="@style/AppTheme" >
 25-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:18:13-44
@@ -51,9 +51,9 @@
 31        </activity>
 32        <activity
 32-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:27:9-30:47
-33            android:name="com.ryanada.bibiliatakatifu.verses.ActivityVerses"
+33            android:name="io.muth0mi.bibilia.verses.ActivityVerses"
 33-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:28:13-50
-34            android:parentActivityName="com.ryanada.bibiliatakatifu.books.ActivityBooks"
+34            android:parentActivityName="io.muth0mi.bibilia.books.ActivityBooks"
 34-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:29:13-62
 35            android:theme="@style/AppTheme" />
 35-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:30:13-44

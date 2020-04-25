@@ -1,4 +1,4 @@
-package com.ryanada.bibilia
+package com.muth0mi.bibilia
 
 import org.junit.Test
 

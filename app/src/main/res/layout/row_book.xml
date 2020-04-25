@@ -7,7 +7,7 @@
 
         <variable
             name="book"
-            type="com.ryanada.bibiliatakatifu.objects.Book" />
+            type="io.muth0mi.bibilia.objects.Book" />
 
     </data>
 

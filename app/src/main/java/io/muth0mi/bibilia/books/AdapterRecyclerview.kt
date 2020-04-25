@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.books
+package io.muth0mi.bibilia.books
 
 import android.annotation.TargetApi
 import android.content.Intent
@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-import com.ryanada.bibilia.R
-import com.ryanada.bibilia.databinding.RowBookBinding
-import com.ryanada.bibilia.objects.Book
-import com.ryanada.bibilia.verses.ActivityVerses
+import io.muth0mi.bibilia.R
+import io.muth0mi.bibilia.databinding.RowBookBinding
+import io.muth0mi.bibilia.objects.Book
+import io.muth0mi.bibilia.verses.ActivityVerses
 
 public class AdapterRecyclerview(val activityBooks: ActivityBooks) : RecyclerView.Adapter<AdapterRecyclerview.BookRow>() {
 

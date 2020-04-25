@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBackground">#000</color>
+    <color name="colorPrimary">#801C17</color>
+    <color name="colorSurface">#222</color>
+    <color name="colorSurfaceLight">#333</color>
+    <color name="colorToolbar">#801C17</color>
     <style name="Theme.AppCompat.DayNight" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.Dialog" parent="Theme.AppCompat.Dialog"/>

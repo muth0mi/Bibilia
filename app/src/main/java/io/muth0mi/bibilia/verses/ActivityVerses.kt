@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.verses
+package io.muth0mi.bibilia.verses
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,12 +13,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-import com.ryanada.bibilia.R
-import com.ryanada.bibilia.databinding.ActivityVersesBinding
-import com.ryanada.bibilia.db.SQliteTransactions
-import com.ryanada.bibilia.objects.Book
-import com.ryanada.bibilia.objects.Chapter
-import com.ryanada.bibilia.objects.Verse
+import io.muth0mi.bibilia.R
+import io.muth0mi.bibilia.databinding.ActivityVersesBinding
+import io.muth0mi.bibilia.db.SQliteTransactions
+import io.muth0mi.bibilia.objects.Book
+import io.muth0mi.bibilia.objects.Chapter
+import io.muth0mi.bibilia.objects.Verse
 
 
 class ActivityVerses : AppCompatActivity() {

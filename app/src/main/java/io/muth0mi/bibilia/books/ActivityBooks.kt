@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.books
+package io.muth0mi.bibilia.books
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,11 +14,11 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
-import com.ryanada.bibilia.R
-import com.ryanada.bibilia.databinding.ActivityBooksBinding
-import com.ryanada.bibilia.db.SQliteTransactions
-import com.ryanada.bibilia.objects.Book
-import com.ryanada.bibilia.objects.Testament
+import io.muth0mi.bibilia.R
+import io.muth0mi.bibilia.databinding.ActivityBooksBinding
+import io.muth0mi.bibilia.db.SQliteTransactions
+import io.muth0mi.bibilia.objects.Book
+import io.muth0mi.bibilia.objects.Testament
 
 class ActivityBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 

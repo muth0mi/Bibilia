@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.db;
+package io.muth0mi.bibilia.db;
 
 import android.content.Context;
 import android.database.SQLException;

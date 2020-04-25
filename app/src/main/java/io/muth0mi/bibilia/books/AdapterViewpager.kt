@@ -1,10 +1,10 @@
-package com.ryanada.bibilia.books
+package io.muth0mi.bibilia.books
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.ryanada.bibilia.R
+import io.muth0mi.bibilia.R
 
 
 // Returns a fragment corresponding to one of the tabs/pages

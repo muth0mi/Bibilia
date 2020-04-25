@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.books
+package io.muth0mi.bibilia.books
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ryanada.bibilia.R
-import com.ryanada.bibilia.databinding.FragmentTestamentBinding
-import com.ryanada.bibilia.db.SQliteTransactions
-import com.ryanada.bibilia.objects.Testament
+import io.muth0mi.bibilia.R
+import io.muth0mi.bibilia.databinding.FragmentTestamentBinding
+import io.muth0mi.bibilia.db.SQliteTransactions
+import io.muth0mi.bibilia.objects.Testament
 
 class FragmentTestamentNew : Fragment() {
 

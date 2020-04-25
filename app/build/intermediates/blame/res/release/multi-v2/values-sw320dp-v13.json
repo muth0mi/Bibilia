@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sw320dp-v13/values-sw320dp-v13.xml",
+            "outputFile": "/home/oly/Workspace/Personal/Android/Bibilia/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sw320dp-v13/values-sw320dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/fbab14279860a771084cecc20b5399e2/material-1.1.0-alpha07/res/values-sw320dp-v13/values-sw320dp-v13.xml",
+                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/341f892e413d8a7841f2aaf8912e2cf4/material-1.1.0-alpha07/res/values-sw320dp-v13/values-sw320dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

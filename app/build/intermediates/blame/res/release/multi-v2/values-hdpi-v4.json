@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/home/oly/Workspace/Personal/Android/Bibilia/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/718bffb8a43d7baa9bff7493c756e4c5/appcompat-1.1.0-alpha05/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/ae53661e95db791a35e393e1266c39f3/appcompat-1.1.0-alpha05/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

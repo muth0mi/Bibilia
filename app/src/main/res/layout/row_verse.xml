@@ -7,7 +7,7 @@
 
         <variable
             name="verse"
-            type="com.ryanada.bibiliatakatifu.objects.Verse" />
+            type="io.muth0mi.bibilia.objects.Verse" />
 
     </data>
 

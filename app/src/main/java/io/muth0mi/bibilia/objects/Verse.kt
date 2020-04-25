@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.objects
+package io.muth0mi.bibilia.objects
 
 class Verse {
 

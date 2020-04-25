@@ -65,7 +65,7 @@ INJECTED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidM
 INJECTED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:2:1-33:12
 INJECTED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
-		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:3:5-42
+		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:3:5-33
 		INJECTED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml
 		INJECTED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -112,7 +112,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-beta01] /hom
 		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:13:9-40
-activity#com.ryanada.bibiliatakatifu.books.ActivityBooks
+activity#io.muth0mi.bibilia.books.ActivityBooks
 ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:16:9-24:20
 	android:theme
 		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:18:13-44
@@ -128,7 +128,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:22:27-74
-activity#com.ryanada.bibiliatakatifu.verses.ActivityVerses
+activity#io.muth0mi.bibilia.verses.ActivityVerses
 ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:27:9-30:47
 	android:parentActivityName
 		ADDED from /home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:29:13-62

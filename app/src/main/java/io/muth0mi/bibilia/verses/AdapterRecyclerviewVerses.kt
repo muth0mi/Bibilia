@@ -1,4 +1,4 @@
-package com.ryanada.bibilia.verses
+package io.muth0mi.bibilia.verses
 
 import android.annotation.TargetApi
 import android.content.Intent
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-import com.ryanada.bibilia.R
-import com.ryanada.bibilia.databinding.RowVerseBinding
-import com.ryanada.bibilia.objects.Verse
+import io.muth0mi.bibilia.R
+import io.muth0mi.bibilia.databinding.RowVerseBinding
+import io.muth0mi.bibilia.objects.Verse
 
 public class AdapterRecyclerviewVerses(val activity: ActivityVerses) : RecyclerView.Adapter<AdapterRecyclerviewVerses.VerseRow>() {
 
