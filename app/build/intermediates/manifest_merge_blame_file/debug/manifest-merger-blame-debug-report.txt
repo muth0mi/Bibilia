@@ -6,68 +6,68 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml
+8-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml
+9-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:5:5-67
-11-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:5:22-64
+11-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:7:5-31:19
+13-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:7:5-31:19
 14        android:allowBackup="true"
-14-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:8:9-35
+14-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.1.0-beta01] /home/oly/.gradle/caches/transforms-2/files-2.1/380ef87fe7030be3b3d2fbc0d93b9a93/core-1.1.0-beta01/AndroidManifest.xml:22:18-86
+15-->[androidx.core:core:1.1.0-beta01] /home/oly/.gradle/caches/transforms-2/files-2.1/9101412587c7b990216e497e91714fa5/core-1.1.0-beta01/AndroidManifest.xml:22:18-86
 16        android:debuggable="true"
 17        android:icon="@mipmap/ic_launcher"
-17-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:9:9-43
+17-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:9:9-43
 18        android:label="@string/app_name"
-18-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:10:9-41
+18-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:10:9-41
 19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:11:9-54
+19-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:11:9-54
 20        android:supportsRtl="true"
-20-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:12:9-35
+20-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:12:9-35
 21        android:testOnly="true"
 22        android:theme="@style/AppTheme" >
-22-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:13:9-40
+22-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:13:9-40
 23        <activity
-23-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:16:9-24:20
+23-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:16:9-24:20
 24            android:name="com.ryanada.bibiliatakatifu.books.ActivityBooks"
-24-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:17:13-48
+24-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:17:13-48
 25            android:theme="@style/AppTheme" >
-25-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:18:13-44
+25-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:18:13-44
 26            <intent-filter>
-26-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:19:13-23:29
+26-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:19:13-23:29
 27                <action android:name="android.intent.action.MAIN" />
-27-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:20:17-69
-27-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:20:25-66
+27-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:20:17-69
+27-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:20:25-66
 28
 29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:22:17-77
-29-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:22:27-74
+29-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:22:17-77
+29-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:22:27-74
 30            </intent-filter>
 31        </activity>
 32        <activity
-32-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:27:9-30:47
+32-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:27:9-30:47
 33            android:name="com.ryanada.bibiliatakatifu.verses.ActivityVerses"
-33-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:28:13-50
+33-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:28:13-50
 34            android:parentActivityName="com.ryanada.bibiliatakatifu.books.ActivityBooks"
-34-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:29:13-62
+34-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:29:13-62
 35            android:theme="@style/AppTheme" />
-35-->/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/src/main/AndroidManifest.xml:30:13-44
+35-->/home/oly/Workspace/Personal/Android/Bibilia/app/src/main/AndroidManifest.xml:30:13-44
 36
 37        <provider
-37-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/9d38c966070d236da82deff56a4edbaa/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+37-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/1da5b750a21f8298b4c49fed21d17ef9/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
 38            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-38-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/9d38c966070d236da82deff56a4edbaa/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+38-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/1da5b750a21f8298b4c49fed21d17ef9/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
 39            android:authorities="com.ryanada.bibiliatakatifu.lifecycle-process"
-39-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/9d38c966070d236da82deff56a4edbaa/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+39-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/1da5b750a21f8298b4c49fed21d17ef9/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
 40            android:exported="false"
-40-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/9d38c966070d236da82deff56a4edbaa/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+40-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/1da5b750a21f8298b4c49fed21d17ef9/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
 41            android:multiprocess="true" />
-41-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/9d38c966070d236da82deff56a4edbaa/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+41-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/oly/.gradle/caches/transforms-2/files-2.1/1da5b750a21f8298b4c49fed21d17ef9/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
 42    </application>
 43
 44</manifest>

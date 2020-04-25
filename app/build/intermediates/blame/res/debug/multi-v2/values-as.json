@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/oly/Documents/Workspace/AndroidStudioProjects/BibiliaTakatifu/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml",
+            "outputFile": "/home/oly/Workspace/Personal/Android/Bibilia/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml",
             "map": [
                 {
-                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/329a022c280914ef5f73c51e3e735552/jetified-navigation-ui-2.0.0/res/values-as/values-as.xml",
+                    "source": "/home/oly/.gradle/caches/transforms-2/files-2.1/5664e8e59d7760a3aa74eb6f4ef328f6/navigation-ui-2.0.0/res/values-as/values-as.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
