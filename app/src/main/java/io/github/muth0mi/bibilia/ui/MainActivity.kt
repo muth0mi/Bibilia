@@ -8,37 +8,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
+import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import io.github.muth0mi.bibilia.R
+import io.github.muth0mi.bibilia.ui.theme.BibiliaTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
-            MyApplicationTheme {
-                App()
+            BibiliaTheme {
+                ProvideWindowInsets {
+                    BibiliaApp()
+                }
             }
         }
-    }
-}
-
-@Composable
-fun App() {
-    val oldTestamentBooks = listOf("1", "2")
-    val newTestamentBooks = listOf("3", "4")
-    val onClickBook: (String) -> Unit = { book ->
-        Log.e("-", "Clicked $book")
-    }
-
-    Column() {
-        BooksTopAppBar(title = stringResource(R.string.books))
-        BooksList(books = oldTestamentBooks, onClickBook = onClickBook)
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    MyApplicationTheme {
-        App()
+    BibiliaTheme {
+        BibiliaApp()
     }
 }
