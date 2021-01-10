@@ -2,10 +2,4 @@
 <resources>
     <color name="colorPrimary">#801C17</color>
     <color name="colorAccent">#D81B60</color>
-
-    <color name="colorBackground">#fff</color>
-    <color name="colorSurface">#fff</color>
-    <color name="colorSurfaceLight">#ccc</color>
-    <color name="colorToolbar">#801C17</color>
-
 </resources>
