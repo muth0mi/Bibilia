@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#801C17</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="maroon">#801C17</color>
 </resources>
