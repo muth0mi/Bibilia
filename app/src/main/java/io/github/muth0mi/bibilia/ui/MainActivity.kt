@@ -1,6 +1,7 @@
 package io.github.muth0mi.bibilia.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
@@ -22,8 +23,15 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun App() {
+    val oldTestamentBooks = listOf("1", "2")
+    val newTestamentBooks = listOf("3", "4")
+    val onClickBook: (String) -> Unit = { book ->
+        Log.e("-", "Clicked $book")
+    }
+
     Column() {
         BooksTopAppBar(title = stringResource(R.string.books))
+        BooksList(books = oldTestamentBooks, onClickBook = onClickBook)
     }
 }
 

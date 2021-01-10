@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import io.github.muth0mi.bibilia.R
 
-
 @Composable
 fun BooksTopAppBar(title: String) {
     val onClickToggle = {
