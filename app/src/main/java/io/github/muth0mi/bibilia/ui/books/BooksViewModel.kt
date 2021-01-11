@@ -3,7 +3,7 @@ package io.github.muth0mi.bibilia.ui.books
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.muth0mi.bibilia.data.Book
+import io.github.muth0mi.bibilia.data.objects.Book
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

@@ -1,7 +1,7 @@
 package io.github.muth0mi.bibilia.ui.verses
 
 import androidx.lifecycle.ViewModel
-import io.github.muth0mi.bibilia.data.Verse
+import io.github.muth0mi.bibilia.data.objects.Verse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

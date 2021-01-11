@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -59,7 +60,13 @@ dependencies {
     implementation(Libs.AndroidX.Compose.materialIconsExtended)
     implementation(Libs.AndroidX.Compose.tooling)
     implementation(Libs.AndroidX.Navigation.composeNavigation)
+    implementation(Libs.AndroidX.Room.runtime)
+    implementation(Libs.AndroidX.Room.ktx)
     implementation(Libs.Accompanist.insets)
+    implementation(Libs.Hilt.hilt)
+
+    kapt(Libs.AndroidX.Room.compiler)
+    kapt(Libs.Hilt.compiler)
 
     testImplementation(Libs.junit)
     androidTestImplementation(Libs.AndroidX.Test.Ext.junit)

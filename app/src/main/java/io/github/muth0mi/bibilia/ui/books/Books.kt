@@ -24,7 +24,7 @@ import androidx.navigation.NavController
 import dev.chrisbanes.accompanist.insets.statusBarsHeight
 import io.github.muth0mi.bibilia.R
 import androidx.navigation.compose.navigate
-import io.github.muth0mi.bibilia.data.Book
+import io.github.muth0mi.bibilia.data.objects.Book
 import io.github.muth0mi.bibilia.ui.theme.BibiliaTheme
 
 @Composable
