@@ -12,6 +12,7 @@ object Libs {
         private const val version = "2.28-alpha"
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
         const val hilt = "com.google.dagger:hilt-android:$version"
+        const val lifecycleVieModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
         const val compiler = "com.google.dagger:hilt-android-compiler:$version"
     }
 

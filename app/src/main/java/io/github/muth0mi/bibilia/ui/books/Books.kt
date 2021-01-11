@@ -17,30 +17,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
 import androidx.navigation.NavController
-import dev.chrisbanes.accompanist.insets.statusBarsHeight
-import io.github.muth0mi.bibilia.R
 import androidx.navigation.compose.navigate
+import dev.chrisbanes.accompanist.insets.statusBarsHeight
+import dev.chrisbanes.accompanist.insets.navigationBarsHeight
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
+import io.github.muth0mi.bibilia.R
+import io.github.muth0mi.bibilia.data.emuns.Testament
 import io.github.muth0mi.bibilia.data.objects.Book
-import io.github.muth0mi.bibilia.ui.theme.BibiliaTheme
 
 @Composable
 fun Books(navController: NavController) {
-    val viewModel: BooksViewModel = viewModel()
-    val viewState by viewModel.state.collectAsState()
+    val booksViewModel: BooksViewModel = viewModel()
+    val viewState by booksViewModel.state.collectAsState()
 
     val versesRoute = stringResource(R.string.route_verses)
-    val onBookClicked: (Book) -> Unit = { book ->
-        navController.navigate("$versesRoute/${book.id}")
-    }
+    val onBookClicked: (Book) -> Unit = { navController.navigate("$versesRoute/${it.id}") }
 
     BooksContent(
         testaments = viewState.testaments,
         selectedTestament = viewState.selectedTestament,
-        onTestamentSelected = viewModel::onTestamentSelected,
+        onTestamentSelected = booksViewModel::onTestamentSelected,
         books = viewState.books,
         onBookClicked = onBookClicked
     )
@@ -48,9 +47,9 @@ fun Books(navController: NavController) {
 
 @Composable
 fun BooksContent(
-    testaments: List<String>,
-    selectedTestament: String,
-    onTestamentSelected: (String) -> Unit,
+    testaments: List<Testament>,
+    selectedTestament: Testament,
+    onTestamentSelected: (Testament) -> Unit,
     books: List<Book>,
     onBookClicked: (Book) -> Unit
 ) {
@@ -62,9 +61,9 @@ fun BooksContent(
 
 @Composable
 fun BooksTopAppBar(
-    testaments: List<String>,
-    selectedTestament: String,
-    onTestamentSelected: (String) -> Unit,
+    testaments: List<Testament>,
+    selectedTestament: Testament,
+    onTestamentSelected: (Testament) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val onClickToggle = {
@@ -74,7 +73,12 @@ fun BooksTopAppBar(
     }
 
     Column(modifier = modifier) {
-        Spacer(Modifier.background(MaterialTheme.colors.primary).fillMaxWidth().statusBarsHeight())
+        Spacer(
+            Modifier
+                .background(MaterialTheme.colors.primary)
+                .fillMaxWidth()
+                .statusBarsHeight()
+        )
 
         TopAppBar(
             navigationIcon = { IconButton(onClick = onClickToggle) { Icon(Icons.Filled.Menu) } },
@@ -89,9 +93,9 @@ fun BooksTopAppBar(
 
 @Composable
 private fun TestamentTabs(
-    testaments: List<String>,
-    selectedTestament: String,
-    onTestamentSelected: (String) -> Unit
+    testaments: List<Testament>,
+    selectedTestament: Testament,
+    onTestamentSelected: (Testament) -> Unit
 ) {
     val selectedIndex = testaments.indexOfFirst { it == selectedTestament }
     val indicator = @Composable { tabPositions: List<TabPosition> ->
@@ -99,11 +103,18 @@ private fun TestamentTabs(
     }
 
     TabRow(selectedTabIndex = selectedIndex, indicator = indicator) {
+        val oldTestament = stringResource(R.string.old_testament)
+        val newTestament = stringResource(R.string.new_testament)
         testaments.forEachIndexed { index, testament ->
             Tab(
                 selected = index == selectedIndex,
                 onClick = { onTestamentSelected(testament) },
-                text = { Text(text = testament, style = MaterialTheme.typography.body2) }
+                text = {
+                    Text(
+                        text = if (testament == Testament.New) oldTestament else newTestament,
+                        style = MaterialTheme.typography.body2
+                    )
+                }
             )
         }
     }
@@ -124,7 +135,7 @@ fun TestamentTabIndicator(
 
 @Composable
 fun BooksList(books: List<Book>, onBookClicked: (Book) -> Unit) {
-    LazyColumn {
+    LazyColumn(modifier = Modifier.navigationBarsPadding()) {
         items(items = books, itemContent = { book ->
             Card(
                 modifier = Modifier
@@ -143,19 +154,5 @@ fun BooksList(books: List<Book>, onBookClicked: (Book) -> Unit) {
                 )
             }
         })
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    BibiliaTheme {
-        BooksContent(
-            testaments = listOf("Old", "New"),
-            selectedTestament = "New",
-            onTestamentSelected = {},
-            books = listOf(Book(1, "Book 1"), Book(2, "Book 2")),
-            onBookClicked = {}
-        )
     }
 }

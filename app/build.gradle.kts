@@ -64,6 +64,7 @@ dependencies {
     implementation(Libs.AndroidX.Room.ktx)
     implementation(Libs.Accompanist.insets)
     implementation(Libs.Hilt.hilt)
+    implementation(Libs.Hilt.lifecycleVieModel)
 
     kapt(Libs.AndroidX.Room.compiler)
     kapt(Libs.Hilt.compiler)
