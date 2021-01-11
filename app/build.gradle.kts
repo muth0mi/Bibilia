@@ -50,9 +50,7 @@ android {
 
 dependencies {
     implementation(Libs.Coroutines.android)
-
     implementation(Libs.material)
-
     implementation(Libs.AndroidX.coreKtx)
     implementation(Libs.AndroidX.appcompat)
     implementation(Libs.AndroidX.Lifecycle.viewmodel)
@@ -60,7 +58,7 @@ dependencies {
     implementation(Libs.AndroidX.Compose.material)
     implementation(Libs.AndroidX.Compose.materialIconsExtended)
     implementation(Libs.AndroidX.Compose.tooling)
-
+    implementation(Libs.AndroidX.Navigation.composeNavigation)
     implementation(Libs.Accompanist.insets)
 
     testImplementation(Libs.junit)

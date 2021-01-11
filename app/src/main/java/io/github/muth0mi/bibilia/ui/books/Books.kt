@@ -20,21 +20,29 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
+import androidx.navigation.NavController
 import dev.chrisbanes.accompanist.insets.statusBarsHeight
 import io.github.muth0mi.bibilia.R
+import androidx.navigation.compose.navigate
+import io.github.muth0mi.bibilia.data.Book
 import io.github.muth0mi.bibilia.ui.theme.BibiliaTheme
 
 @Composable
-fun Books() {
+fun Books(navController: NavController) {
     val viewModel: BooksViewModel = viewModel()
     val viewState by viewModel.state.collectAsState()
+
+    val versesRoute = stringResource(R.string.route_verses)
+    val onBookClicked: (Book) -> Unit = { book ->
+        navController.navigate("$versesRoute/${book.id}")
+    }
 
     BooksContent(
         testaments = viewState.testaments,
         selectedTestament = viewState.selectedTestament,
         onTestamentSelected = viewModel::onTestamentSelected,
         books = viewState.books,
-        onBookClicked = viewModel::onBookClicked
+        onBookClicked = onBookClicked
     )
 }
 
@@ -43,8 +51,8 @@ fun BooksContent(
     testaments: List<String>,
     selectedTestament: String,
     onTestamentSelected: (String) -> Unit,
-    books: List<String>,
-    onBookClicked: (String) -> Unit
+    books: List<Book>,
+    onBookClicked: (Book) -> Unit
 ) {
     Column {
         BooksTopAppBar(testaments, selectedTestament, onTestamentSelected)
@@ -115,7 +123,7 @@ fun TestamentTabIndicator(
 }
 
 @Composable
-fun BooksList(books: List<String>, onBookClicked: (String) -> Unit, modifier: Modifier = Modifier) {
+fun BooksList(books: List<Book>, onBookClicked: (Book) -> Unit) {
     LazyColumn {
         items(items = books, itemContent = { book ->
             Card(
@@ -128,7 +136,7 @@ fun BooksList(books: List<String>, onBookClicked: (String) -> Unit, modifier: Mo
                     .clickable(onClick = { onBookClicked.invoke(book) })
             ) {
                 Text(
-                    text = book,
+                    text = book.name,
                     modifier = Modifier.padding(dimensionResource(R.dimen.default_padding)),
                     style = MaterialTheme.typography.body1,
                     color = MaterialTheme.colors.onSurface
@@ -146,7 +154,7 @@ fun DefaultPreview() {
             testaments = listOf("Old", "New"),
             selectedTestament = "New",
             onTestamentSelected = {},
-            books = listOf("Book 1", "Book 2"),
+            books = listOf(Book(1, "Book 1"), Book(2, "Book 2")),
             onBookClicked = {}
         )
     }
