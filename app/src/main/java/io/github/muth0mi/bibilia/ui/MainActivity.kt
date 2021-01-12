@@ -7,7 +7,7 @@ import androidx.compose.ui.platform.setContent
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
-import io.github.muth0mi.bibilia.ui.books.BooksViewModel
+import io.github.muth0mi.bibilia.ui.bookList.BooksViewModel
 import io.github.muth0mi.bibilia.ui.theme.BibiliaTheme
 import io.github.muth0mi.bibilia.util.LocaleManager
 import java.util.*

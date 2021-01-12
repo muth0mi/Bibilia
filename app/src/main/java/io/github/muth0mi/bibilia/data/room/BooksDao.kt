@@ -10,11 +10,12 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 abstract class BooksDao {
-
-    @Query("SELECT id, name, testament FROM books WHERE testament = :testament")
+    @Query("SELECT id, testament, name FROM books WHERE testament = :testament")
     abstract fun books(testament: Testament): Flow<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(entity: Book): Long
+    abstract suspend fun insert(books: List<Book>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insert(book: Book)
 }

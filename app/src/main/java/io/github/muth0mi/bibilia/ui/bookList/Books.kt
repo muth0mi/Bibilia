@@ -1,4 +1,4 @@
-package io.github.muth0mi.bibilia.ui.books
+package io.github.muth0mi.bibilia.ui.bookList
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -11,8 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
@@ -28,17 +26,17 @@ import io.github.muth0mi.bibilia.data.objects.Book
 
 @Composable
 fun Books(navController: NavController, booksViewModel: BooksViewModel) {
-    val viewState by booksViewModel.state.collectAsState()
-
     val versesRoute = stringResource(R.string.route_verses)
-    val onBookClicked: (Book) -> Unit = { navController.navigate("$versesRoute/${it.id}") }
+    val openBook: (Book) -> Unit = {
+        navController.navigate("$versesRoute/${it.id}")
+    }
 
     BooksContent(
-        testaments = viewState.testaments,
-        selectedTestament = viewState.selectedTestament,
+        testaments = booksViewModel.testaments,
+        selectedTestament = booksViewModel.selectedTestament.value,
         onTestamentSelected = booksViewModel::onTestamentSelected,
-        books = viewState.books,
-        onBookClicked = onBookClicked
+        books = booksViewModel.books.value,
+        openBook = openBook
     )
 }
 
@@ -48,12 +46,14 @@ fun BooksContent(
     selectedTestament: Testament,
     onTestamentSelected: (Testament) -> Unit,
     books: List<Book>,
-    onBookClicked: (Book) -> Unit
+    openBook: (Book) -> Unit,
+    modifier: Modifier = Modifier
 ) {
-    Column {
-        BooksTopAppBar(testaments, selectedTestament, onTestamentSelected)
-        BooksList(books, onBookClicked)
-    }
+    Scaffold(
+        modifier = modifier,
+        topBar = { BooksTopAppBar(testaments, selectedTestament, onTestamentSelected) },
+        bodyContent = { BooksList(books, openBook) }
+    )
 }
 
 @Composable
@@ -63,16 +63,13 @@ fun BooksTopAppBar(
     onTestamentSelected: (Testament) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val onClickToggle = {
-    }
+    val onClickToggle = {}
 
-    val onClickSearch = {
-    }
+    val onClickSearch = {}
 
-    Column(modifier = modifier) {
+    Column(modifier = modifier.background(MaterialTheme.colors.primary)) {
         Spacer(
-            Modifier
-                .background(MaterialTheme.colors.primary)
+            modifier = Modifier
                 .fillMaxWidth()
                 .statusBarsHeight()
         )
@@ -126,12 +123,15 @@ fun TestamentTabIndicator(
         modifier = modifier
             .padding(horizontal = dimensionResource(R.dimen.default_padding))
             .preferredHeight(4.dp)
-            .background(color, RoundedCornerShape(topLeftPercent = 100, topRightPercent = 100))
+            .background(
+                color,
+                RoundedCornerShape(topLeftPercent = 100, topRightPercent = 100)
+            )
     )
 }
 
 @Composable
-fun BooksList(books: List<Book>, onBookClicked: (Book) -> Unit) {
+fun BooksList(books: List<Book>, openBook: (Book) -> Unit) {
     LazyColumn(modifier = Modifier.navigationBarsPadding()) {
         items(items = books, itemContent = { book ->
             Card(
@@ -141,7 +141,7 @@ fun BooksList(books: List<Book>, onBookClicked: (Book) -> Unit) {
                         dimensionResource(R.dimen.default_padding),
                         dimensionResource(R.dimen.half_padding)
                     )
-                    .clickable(onClick = { onBookClicked.invoke(book) })
+                    .clickable(onClick = { openBook.invoke(book) })
             ) {
                 Text(
                     text = book.name,

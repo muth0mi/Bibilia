@@ -8,8 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import io.github.muth0mi.bibilia.R
-import io.github.muth0mi.bibilia.ui.books.Books
-import io.github.muth0mi.bibilia.ui.books.BooksViewModel
+import io.github.muth0mi.bibilia.ui.bookList.Books
+import io.github.muth0mi.bibilia.ui.bookList.BooksViewModel
 import io.github.muth0mi.bibilia.ui.verses.Verses
 
 @Composable
@@ -23,7 +23,7 @@ fun BibiliaApp(booksViewModel: BooksViewModel) {
         composable(booksRoute) { Books(navController, booksViewModel) }
         composable(
             "$versesRoute/{bookId}",
-            arguments = listOf(navArgument("bookId") { type = NavType.IntType })
+            listOf(navArgument("bookId") { type = NavType.IntType })
         ) { backStackEntry ->
             backStackEntry.arguments?.let { arguments ->
                 Verses(navController, arguments.getInt("bookId"))
