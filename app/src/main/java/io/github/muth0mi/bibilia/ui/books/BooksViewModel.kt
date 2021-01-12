@@ -1,19 +1,19 @@
 package io.github.muth0mi.bibilia.ui.books
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.muth0mi.bibilia.data.emuns.Testament
 import io.github.muth0mi.bibilia.data.objects.Book
-import io.github.muth0mi.bibilia.data.stores.BookStore
-import io.github.muth0mi.bibilia.di.Graph
+import io.github.muth0mi.bibilia.data.repository.BookRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
-class BooksViewModel(private val bookStore: BookStore = Graph.bookStore) : ViewModel() {
-    private val testaments = bookStore.getTestaments()
+class BooksViewModel
+@ViewModelInject constructor(private val bookRepository: BookRepository) : ViewModel() {
+    private val testaments = bookRepository.getTestaments()
 
     private val _selectedTestament = MutableStateFlow(Testament.Old)
     private val selectedTestament: StateFlow<Testament> get() = _selectedTestament
@@ -45,7 +45,7 @@ class BooksViewModel(private val bookStore: BookStore = Graph.bookStore) : ViewM
 
     fun onTestamentSelected(testament: Testament) = CoroutineScope(Dispatchers.IO).launch {
         _selectedTestament.value = testament
-        _books.value = bookStore.getBooks(testament).first()
+        _books.value = bookRepository.getBooks(testament).first()
     }
 }
 

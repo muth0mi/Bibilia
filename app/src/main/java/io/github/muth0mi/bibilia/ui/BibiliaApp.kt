@@ -9,17 +9,18 @@ import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import io.github.muth0mi.bibilia.R
 import io.github.muth0mi.bibilia.ui.books.Books
+import io.github.muth0mi.bibilia.ui.books.BooksViewModel
 import io.github.muth0mi.bibilia.ui.verses.Verses
 
 @Composable
-fun BibiliaApp() {
+fun BibiliaApp(booksViewModel: BooksViewModel) {
     val navController = rememberNavController()
 
     val booksRoute = stringResource(R.string.route_books)
     val versesRoute = stringResource(R.string.route_verses)
 
     NavHost(navController, startDestination = booksRoute) {
-        composable(booksRoute) { Books(navController) }
+        composable(booksRoute) { Books(navController, booksViewModel) }
         composable(
             "$versesRoute/{bookId}",
             arguments = listOf(navArgument("bookId") { type = NavType.IntType })

@@ -18,19 +18,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import dev.chrisbanes.accompanist.insets.statusBarsHeight
-import dev.chrisbanes.accompanist.insets.navigationBarsHeight
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
+import dev.chrisbanes.accompanist.insets.statusBarsHeight
 import io.github.muth0mi.bibilia.R
 import io.github.muth0mi.bibilia.data.emuns.Testament
 import io.github.muth0mi.bibilia.data.objects.Book
 
 @Composable
-fun Books(navController: NavController) {
-    val booksViewModel: BooksViewModel = viewModel()
+fun Books(navController: NavController, booksViewModel:BooksViewModel) {
     val viewState by booksViewModel.state.collectAsState()
 
     val versesRoute = stringResource(R.string.route_verses)

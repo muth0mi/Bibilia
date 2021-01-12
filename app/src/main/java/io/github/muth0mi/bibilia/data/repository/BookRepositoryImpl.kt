@@ -1,4 +1,4 @@
-package io.github.muth0mi.bibilia.data.stores
+package io.github.muth0mi.bibilia.data.repository
 
 import io.github.muth0mi.bibilia.data.emuns.Testament
 import io.github.muth0mi.bibilia.data.objects.Book
@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 
+class BookRepositoryImpl(private val booksDao: BooksDao, private val fileUtility: FileUtility) :
+    BookRepository {
 
-class BookStore(private val booksDao: BooksDao, private val fileUtility: FileUtility) {
-
-    fun getTestaments(): MutableStateFlow<ArrayList<Testament>> {
+    override fun getTestaments(): MutableStateFlow<ArrayList<Testament>> {
         return MutableStateFlow(arrayListOf(Testament.Old, Testament.New))
     }
 
-    suspend fun getBooks(testament: Testament): Flow<List<Book>> {
+    override suspend fun getBooks(testament: Testament): Flow<List<Book>> {
         val books = booksDao.books(testament)
         if (books.first().isEmpty()) {
             fileUtility.getAssetJsonData(testament).forEach { b -> addBook(b) }

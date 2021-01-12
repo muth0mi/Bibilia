@@ -8,21 +8,18 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.muth0mi.bibilia.data.room.BibiliaDatabase
-import io.github.muth0mi.bibilia.data.room.BooksDao
 import javax.inject.Singleton
 
-@Module
 @InstallIn(ApplicationComponent::class)
+@Module
 object DatabaseModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBibiliaDatabase(@ApplicationContext context: Context) = Room
         .databaseBuilder(context, BibiliaDatabase::class.java, "bibilia.db")
         .build()
 
     @Provides
-    fun provideBooksDao(database: BibiliaDatabase): BooksDao {
-        return database.bookDao()
-    }
+    fun provideBooksDao(database: BibiliaDatabase) = database.bookDao()
 }
