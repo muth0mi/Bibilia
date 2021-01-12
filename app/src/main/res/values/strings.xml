@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">Bibilia Takatifu</string>
-    <string name="books">Vitabu</string>
-    <string name="old_testament">Agano La Kale</string>
-    <string name="new_testament">Agano Jipya</string>
+    <string name="books">Books</string>
+    <string name="old_testament">Old Testament</string>
+    <string name="new_testament">New Testament</string>
 
     <string name="route_books" translatable="false">books</string>
     <string name="route_verses" translatable="false">verses</string>

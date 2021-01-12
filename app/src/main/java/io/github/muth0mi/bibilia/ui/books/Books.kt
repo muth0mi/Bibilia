@@ -27,7 +27,7 @@ import io.github.muth0mi.bibilia.data.emuns.Testament
 import io.github.muth0mi.bibilia.data.objects.Book
 
 @Composable
-fun Books(navController: NavController, booksViewModel:BooksViewModel) {
+fun Books(navController: NavController, booksViewModel: BooksViewModel) {
     val viewState by booksViewModel.state.collectAsState()
 
     val versesRoute = stringResource(R.string.route_verses)
