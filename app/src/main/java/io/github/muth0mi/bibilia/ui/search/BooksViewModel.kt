@@ -1,4 +1,4 @@
-package io.github.muth0mi.bibilia.ui.bookList
+package io.github.muth0mi.bibilia.ui.search
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

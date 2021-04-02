@@ -10,16 +10,19 @@ import androidx.navigation.compose.rememberNavController
 import io.github.muth0mi.bibilia.R
 import io.github.muth0mi.bibilia.ui.bookList.Books
 import io.github.muth0mi.bibilia.ui.bookList.BooksViewModel
+import io.github.muth0mi.bibilia.ui.search.SearchScreen
 import io.github.muth0mi.bibilia.ui.verses.Verses
 
 @Composable
 fun BibiliaApp(booksViewModel: BooksViewModel) {
     val navController = rememberNavController()
 
+    val searchRoute = stringResource(R.string.route_search)
     val booksRoute = stringResource(R.string.route_books)
     val versesRoute = stringResource(R.string.route_verses)
 
     NavHost(navController, startDestination = booksRoute) {
+        composable(searchRoute) { SearchScreen(navController) }
         composable(booksRoute) { Books(navController, booksViewModel) }
         composable(
             "$versesRoute/{bookId}",

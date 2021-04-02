@@ -4,6 +4,9 @@
     <string name="old_testament">Old Testament</string>
     <string name="new_testament">New Testament</string>
 
+    <string name="route_search" translatable="false">search</string>
     <string name="route_books" translatable="false">books</string>
     <string name="route_verses" translatable="false">verses</string>
+    <string name="empty_recent_search">No recent searches</string>
+    <string name="pick_up_reading">Pick up reading</string>
 </resources>
